@@ -4,8 +4,6 @@ public class CelsiusToFahrenheit
 {
     public static void Main(string[] args)
     {
-        // Prompt user
-        Console.Write("Enter temperature in Celsius: ");
 
         // Read Celsius value
         double celsius = double.Parse(Console.ReadLine());
