@@ -1,5 +1,4 @@
 using System;
-
 class Operators{
     public static void Main(String[] args){
         int a=10;
@@ -68,10 +67,18 @@ class Operators{
         Console.WriteLine("Type Operators");
         Console.WriteLine(a is int);
         Console.WriteLine(typeof(int));
-        object obj = a;
-        int num = obj as int? ?? 0;
-        Console.WriteLine(num);
+
+        //memory management example
+        int a = 5;
+        float f = (float)a;  // explicit conversion
+        Console.WriteLine(f); // Output: 5 beacuse of WriteLine it uses shortest representation
+
+        //to correct this
+        Console.WriteLine(f.ToString("0.0")); // Output: 5.0
+
+
 
 
     }
+
 }
