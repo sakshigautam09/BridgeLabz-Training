@@ -3,21 +3,20 @@ using System.Collections.Generic;
 
 public class TwoSum
 {
-    public int[] TwoSumMethod(int[] nums, int target)
+    public int[] TwoSumBruteForce(int[] nums, int target)
     {
-        int n = nums.Length;
-        Dictionary<int, int> mp = new Dictionary<int, int>();
-
-        for (int i = 0; i < n; i++)
+        for (int i = 0; i < nums.Length; i++)
         {
-            int rem = target - nums[i];
-            if (mp.ContainsKey(rem))
+            for (int j = i + 1; j < nums.Length; j++)
             {
-                return new int[] { mp[rem], i };
+                if (nums[i] + nums[j] == target)
+                {
+                    return new int[] { i, j };
+                }
             }
-            mp[nums[i]] = i;
         }
 
+        // If no solution exists
         return new int[] { };
     }
 }

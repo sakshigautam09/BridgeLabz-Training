@@ -1,7 +1,6 @@
 using System;
 
-public class CalculateAvgThreeNumbers
-{
+public class CalculateAvgThreeNumbers{
     public static void Main(string[] args)
     {
         // Read three numbers from user

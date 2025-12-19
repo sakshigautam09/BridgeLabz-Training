@@ -3,42 +3,31 @@ using System.Collections.Generic;
 
 public class ValidParenthesis
 {
-    public bool isValid(string s)
+   public bool IsValid(string s)
     {
-        int n = s.Length;
-        Stack<char> st = new Stack<char>();
+        bool changed = true;
 
-        foreach (char ch in s)
+        while (changed)
         {
-            if (st.Count == 0 || ch == '(' || ch == '{' || ch == '[')
-            {
-                st.Push(ch);
-                continue; // skip to next iteration
-            }
+            changed = false;
 
-            if (ch == ')')
+            if (s.Contains("()"))
             {
-                if (st.Peek() == '(')
-                    st.Pop();
-                else
-                    return false;
+                s = s.Replace("()", "");
+                changed = true;
             }
-            else if (ch == '}')
+            else if (s.Contains("{}"))
             {
-                if (st.Peek() == '{')
-                    st.Pop();
-                else
-                    return false;
+                s = s.Replace("{}", "");
+                changed = true;
             }
-            else if (ch == ']')
+            else if (s.Contains("[]"))
             {
-                if (st.Peek() == '[')
-                    st.Pop();
-                else
-                    return false;
+                s = s.Replace("[]", "");
+                changed = true;
             }
         }
 
-        return st.Count == 0;
+        return s.Length == 0;
     }
 }

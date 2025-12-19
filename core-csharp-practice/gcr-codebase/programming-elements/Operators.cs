@@ -75,10 +75,5 @@ class Operators{
 
         //to correct this
         Console.WriteLine(f.ToString("0.0")); // Output: 5.0
-
-
-
-
     }
-
 }
