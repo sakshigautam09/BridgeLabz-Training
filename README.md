@@ -67,7 +67,7 @@ BridgeLabz Training Data
 
 <!-- -------------------------------------------------------------- -->
 # Day 4 — December 19, 2025 — Introduction to Datatypes and Opeartors in C#
-## Topic: .Net Achitecture, Compiler Explanation, Datatypes & Operators
+## Topic: .Net Achitecture, Compiler Explanation, Datatypes & Operators, Memory usage, Access modifiers
 ## What I Learned
 
 ## Morning Session:
@@ -86,9 +86,32 @@ BridgeLabz Training Data
 * Writing a single C# program demonstrating all datatypes and operators
 * Understanding how `Console.WriteLine()` works with different datatypes
 
+## Afternoon Session
+* Memory Usage:
+  * Value types - stack memory
+  * Reference types - heap memory
+* Access Modifiers in C#
+  * public
+  * private
+  * protected
+  * internal
+  * protected internal
+  * private protected
+* Basic Programs Practiced
+  * Quotient and Remainder
+  * IntOperation & DoubleOperation
+  * Temperature Conversion (Celsius ↔ Fahrenheit)
+  * Total Income Calculation
+  * Swap Two Numbers
+  * Trip Distance Calculation
+
 ## Task for the Day
 * Practice C# datatypes with examples
 * Implement all operators in a single C# program
 * Understand implicit vs explicit type conversion
+* Learn about all the access modifiers
+* Practice programs provided in the assessment
 * Push updated code to GitHub
+
+
 

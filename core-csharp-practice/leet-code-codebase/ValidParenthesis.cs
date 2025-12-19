@@ -6,11 +6,9 @@ public class ValidParenthesis
    public bool IsValid(string s)
     {
         bool changed = true;
-
         while (changed)
         {
             changed = false;
-
             if (s.Contains("()"))
             {
                 s = s.Replace("()", "");
@@ -27,7 +25,6 @@ public class ValidParenthesis
                 changed = true;
             }
         }
-
         return s.Length == 0;
     }
 }
