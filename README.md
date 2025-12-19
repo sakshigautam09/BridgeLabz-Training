@@ -67,6 +67,7 @@ BridgeLabz Training Data
 
 <!-- -------------------------------------------------------------- -->
 # Day 4 — December 19, 2025 — Introduction to Datatypes and Opeartors in C#
+## Topic: .Net Achitecture, Compiler Explanation, Datatypes & Operators
 ## What I Learned
 
 ## Morning Session:
