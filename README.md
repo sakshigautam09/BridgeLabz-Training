@@ -86,7 +86,7 @@ BridgeLabz Training Data
 * Writing a single C# program demonstrating all datatypes and operators
 * Understanding how `Console.WriteLine()` works with different datatypes
 
-## Afternoon Session
+## Afternoon Session:
 * Memory Usage:
   * Value types - stack memory
   * Reference types - heap memory
@@ -97,7 +97,7 @@ BridgeLabz Training Data
   * internal
   * protected internal
   * private protected
-* Basic Programs Practiced
+* Basic Programs Practiced:
   * Quotient and Remainder
   * IntOperation & DoubleOperation
   * Temperature Conversion (Celsius ↔ Fahrenheit)
