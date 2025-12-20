@@ -29,7 +29,7 @@ class DerivedClass : BaseClass{
     }
 }
 
-class Program{
+class AccessModifiers{
     static void Main(){
         BaseClass obj = new BaseClass();
         obj.ShowBase();
