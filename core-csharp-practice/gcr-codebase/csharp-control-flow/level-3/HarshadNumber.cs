@@ -1,10 +1,9 @@
 using System;
-class Program
+class HarshadNumber
 {
     static void Main()
     {
         int n, temp, sum = 0;
-
         Console.Write("Enter a number: ");
         n = Convert.ToInt32(Console.ReadLine());
 

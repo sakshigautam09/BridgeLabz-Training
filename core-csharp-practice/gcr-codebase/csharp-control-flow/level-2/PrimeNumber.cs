@@ -5,7 +5,6 @@ class PrimeNumber
     {
         int n;
         bool isPrime = true;
-
         Console.Write("Enter number: ");
         n = Convert.ToInt32(Console.ReadLine());
 
