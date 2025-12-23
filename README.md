@@ -113,6 +113,93 @@ BridgeLabz Training Data
 * Practice programs provided in the assessment
 * Push updated code to GitHub
 
+<!-- ------------------------------------------------------------------- -->
+# Day — December 22, 2025 — Introduction to Control Flow Statements in C#
+## Topic: Control Flow Statements (Decision Making & Looping)
+## What I Learned
+## Morning Session:
+* Introduction to control flow statements in C#
+  * Understanding the importance of control flow in program execution
+  * Conditional Statements:
+  * if statement
+  * if-else statement
+  * else-if ladder
+  * Nested if statements
+* Looping Statements:
+  * for loop
+  * Initialization, condition, increment/decrement
+  * while loop
+  * Entry-controlled loop
+  * do-while loop
+  * Exit-controlled loop
+  * Difference between while and do-while
+  * foreach loop
+* Selection Statement:
+ * switch-case
+ * Use of break
+ * Default case
+* Flow control keywords:
+  * break
+  * continue
+
+## Afternoon Session:
+  * Hands-on practice with control flow programs
+  * Writing programs using:
+  * Conditional logic
+  * Loop-based iteration
+  * Understanding real-world use cases of:
+  * if-else vs switch-case
+  * for vs while vs do-while
+* Practiced programs
+* Debugging common mistakes in loops and conditions
+* Improving logical thinking using control flow
+
+## Task for the Day
+  * Practice all conditional statements with examples
+  * Write programs using: if-else, switch-case
+  * Practice all looping statements: for, while, do-while, foreach
+  * Understand differences between loop types
+  * Solve assessment programs using control flow
+  * Push updated practice code to GitHub
+
+
+<!-- --------------------------------------------------------------------- -->
+# Day — December 23, 2025 — Introduction to Arrays in C#
+## Topic: Arrays (1D, 2D, and Multi-Dimensional Arrays)
+## What I Learned
+## Morning Session:
+  * Introduction to Arrays in C#
+  * Understanding the need for arrays to store multiple values of the same data type
+  * Array declaration, initialization, and usage
+  * Types of Arrays:
+    * One-Dimensional Arrays
+    * Two-Dimensional Arrays
+    * Jagged Arrays (Array of Arrays)
+  * Accessing array elements using index
+  * Iterating through arrays using: 
+    * for loop
+    * foreach loop
+  * Understanding array length and index boundaries
+  * Common mistakes while working with arrays (index out of range)
+
+## Afternoon Session:
+* Hands-on practice with array-based programs
+* Storing and processing user input using arrays
+* Programs practiced using arrays
+* Input validation while storing values in arrays
+* Using index decrement to re-enter invalid input
+* Understanding memory allocation for array
+
+## Task for the Day
+* Practice creating and using:
+  * One-dimensional arrays
+  * Two-dimensional arrays
+  * Jagged arrays
+* Write programs to perform calculations using arrays
+* Practice array traversal using loops
+* Solve assessment programs based on arrays
+* Improve logic building using array manipulation
+* Push updated array-based programs to GitHub
 
 
 
