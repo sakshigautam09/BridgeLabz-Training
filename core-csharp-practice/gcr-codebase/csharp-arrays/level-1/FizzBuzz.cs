@@ -3,7 +3,7 @@ class FizzBuzz
 {
     public static void Main(string[] args)
     {
-        int number = Convert.toInt32(Console.ReadLine());
+        int number = Convert.ToInt32(Console.ReadLine());
         if (number < 0)
         {
             Console.WriteLine("Number is negative.");
