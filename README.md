@@ -202,5 +202,252 @@ BridgeLabz Training Data
 * Push updated array-based programs to GitHub
 
 
+<!-- -------------------------------------------------------------------- -->
+# Day — December 24, 2025 — Methods in C#
+## Topic: Using Methods for Modular Programming and Logic Building
+## What I Learned
+## Morning Session:
+  * Introduction to methods in C#
+  * Understanding the need for methods in program design
+  * Method declaration, definition, and calling
+  * Passing parameters to methods
+  * Returning values from methods
+  * Improving code readability and reusability using methods
 
+## Afternoon Session:
+  * Hands-on practice with method-based programs
+  * Writing separate methods for calculations and logic
+  * Calling methods from the Main method
+  * Understanding parameter passing and return types
+  * Debugging logical errors in method-based programs
+
+## Programs Practiced
+  * Level-1 (Method-Based Programs):
+      * Check Number
+      * Chocolate Distribution
+      * Maximum Number of Handshakes
+      * Quotient and Remainder
+
+## Key Concepts Covered:
+  * Method-based program structure
+  * Parameter passing
+  * Return values
+  * Code reusability
+  * Logical separation of tasks
+  * Modular programming approach
+
+## Task for the Day
+  * Practice writing reusable methods
+  * Improve program modularity
+  * Strengthen logical thinking using methods
+  * Refactor code for better readability
+  * Test programs with different inputs
+  * Push updated method-based programs to GitHub
+
+<!-- ---------------------------------------------------------------------- -->
+# Day — December 25, 2025 — Method-Based Programs in C#
+## Topic: Intermediate and Advanced Logic Using Methods
+## What I Learned
+  * Strengthened understanding of method-based program design
+  * Applied methods to solve real-world and mathematical problems
+  * Broke complex problems into smaller reusable methods
+  * Improved logical thinking using conditions and loops
+  * Worked on multi-step calculations and validations
+  * Enhanced code readability through modular structure
+
+## Key Concepts Covered
+  * Method reusability and modular programming
+  * Conditional logic and loops
+  * Mathematical and logical computations
+  * Multi-parameter methods
+  * Input validation
+
+Problem-solving using structured approach
+
+## Task for the Day
+  * Practice intermediate and advanced method-based problems
+  * Improve logical accuracy and efficiency
+  * Refactor code for better readability
+  * Test programs with different input values
+  * Push updated programs to GitHub
+
+
+<!-- ------------------------------------------------------------------ -->
+# Day — December 26, 2025 — Strings and Exceptions in C#
+## Topic: String Handling and Common Exceptions in C#
+## What I Learned
+## Morning Session:
+  * Introduction to strings in C#
+  * Understanding string as a reference type
+  * Difference between string and String
+  * String immutability and its impact on performance
+  * String declaration and initialization
+  * Accessing characters in a string using index
+  * String length and indexing boundaries
+  * Introduction to exceptions in C#
+  * Understanding why exceptions occur at runtime
+
+## Afternoon Session:
+  * Hands-on practice with string-based programs
+  * Performing string manipulation without using built-in methods
+  * Using loops to traverse strings
+  * Reversing a string using logic
+  * Checking palindrome strings
+  * Counting characters, words, and vowels in a string
+  * Writing programs to intentionally generate exceptions
+  * Observing program behavior during runtime errors
+
+## Exceptions Practiced:
+  * NullReferenceException
+  * IndexOutOfRangeException
+  * FormatException
+
+## Key Concepts Covered:
+  * String immutability
+  * Index-based access
+  * Loop-based string traversal
+  * Common runtime exceptions
+  * Causes of exceptions in real programs
+  * Importance of writing safer code
+
+## Task for the Day
+  * Practice string manipulation programs
+  * Write code to understand common exceptions
+  * Identify causes of runtime errors
+  * Improve code safety through better logic
+  * Refactor code to avoid common exceptions
+  * Push updated string and exception-based programs to GitHub
+
+<!-- -------------------------------------------------------------------- -->
+# Day — December 27, 2025 — Extra String Programs in C#
+## Topic: Advanced String Manipulation and Logic Building
+## What I Learned
+## Morning Session:
+  * Revision of basic string concepts in C#
+  * Understanding problem statements related to strings
+  * Breaking string problems into logical steps
+  * Identifying patterns in string manipulation problems
+  * Improving logical thinking using character-level operations
+
+## Afternoon Session:
+  * Hands-on practice with additional string-based programs
+  * Implementing string logic without relying heavily on built-in methods
+  * Using loops and conditional statements for string processing
+  * Improving accuracy in string comparison and validation
+  * Debugging logical errors in string programs
+
+## Programs Practiced:
+Anagram Strings
+Compare Strings
+Count Vowels and Consonants
+Find Substring Occurrences
+Longest Word in a String
+
+## Key Concepts Covered:
+  * Character-by-character string traversal
+  * ASCII and character comparisons
+  * Loop-based string manipulation
+  * Conditional logic for string operations
+  * String validation techniques
+  * Efficient logic building for text processing
+
+## Task for the Day
+  * Practice advanced string problems
+  * Improve problem-solving speed
+  * Strengthen understanding of string logic
+  * Refactor programs for better readability
+  * Handle edge cases in string inputs
+  * Push updated string programs to GitHub
+
+
+<!-- -------------------------------------------------------------------- -->
+# Day — December 28, 2025 — Built-in Methods and Logic-Based Programs in C#
+## Topic: Using Built-in Methods and Strengthening Core Logic
+## What I Learned
+## Morning Session:
+  * Understanding and using built-in methods provided by C#
+  * Applying built-in methods for calculations, comparisons, and formatting
+  * Working with predefined classes and their methods
+  * Understanding method behavior through practical examples
+  * Combining built-in methods with conditional logic
+
+## Afternoon Session:
+  * Hands-on practice with logic-based programs
+  * Using built-in methods to simplify program logic
+  * Strengthening problem-solving skills using conditions and loops
+  * Writing clean and modular code
+  * Handling user input and validating results
+
+## Programs Practiced
+  * Level-1 (Built-in Methods):
+      * Date Arithmetic
+      * Date Comparison
+      * Date Formatting
+      * Time Zones
+
+  * Level-2 (Logic & Calculations):
+      * Basic Calculator
+      * Factorial
+      * Fibonacci Sequence
+      * GCD and LCM
+
+
+## Key Concepts Covered:
+  * Usage of built-in methods
+  * Logical operations and comparisons
+  * Loop-based calculations
+  * Conditional statements
+  * Mathematical problem solving
+  * Modular programming approach
+
+## Task for the Day
+  * Practice programs using built-in methods
+  * Improve understanding of method usage
+  * Strengthen logical thinking
+  * Refactor programs for better readability
+  * Handle edge cases effectively
+  * Push updated programs to GitHub
+
+
+<!-- ------------------------------------------------------------------ -->
+# Day — December 29, 2025 — Scenario-Based Programming in C#
+## Topic: Scenario-Based Problems, Logic Building, and Problem Solving
+## What I Learned
+## Morning Session:
+  * Introduction to scenario-based programming problems
+  * Understanding problem statements and breaking them into smaller logical steps
+  * Identifying inputs, outputs, and constraints in real-world scenarios
+  * Applying conditional statements and loops effectively
+  * Designing logic before writing code
+  * Importance of dry run and test cases
+  * Improving problem-solving approach using step-by-step execution
+
+## Afternoon Session:
+  * Hands-on practice with scenario-based programs
+  * Implementing logic-heavy programs using arrays, strings, and control structures
+  * Debugging logical errors and handling edge cases
+  * Writing clean and readable code
+  * Understanding real-world problem simulation through code
+
+## Programs Practiced:
+  * Snake and Ladder game simulation
+  * String Formatter program
+  * Temperature Analyzer program
+
+## Key Concepts Applied:
+  * Arrays and multi-dimensional arrays
+  * Loops (for, while, foreach)
+  * Conditional statements (if-else, switch)
+  * String manipulation
+  * Input validation
+  * Modular programming using methods
+  * Index handling and boundary checks
+
+## Task for the Day
+  * Practice solving scenario-based problems
+  * Improve logical thinking and analytical skills
+  * Implement real-world simulations using C#
+  * Debug and optimize existing programs
+  * Refactor code for better readability
+  * Push updated scenario-based programs to GitHub
 
