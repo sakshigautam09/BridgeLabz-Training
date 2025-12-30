@@ -451,3 +451,50 @@ Longest Word in a String
   * Refactor code for better readability
   * Push updated scenario-based programs to GitHub
 
+<!-- --------------------------------------------------------- -->
+# Day — December 30, 2025 — Scenario-Based Programming in C#
+## Topic: Menu-Driven Applications and Real-World Simulations
+## What I Learned
+## Morning Session:
+  * Design and implementation of Library Management System (LMS)
+  * Understanding real-world roles: Admin (Librarian) and User
+  * Implementing secure role separation using basic passcode logic
+  * Storing and managing book data using arrays
+  * Performing add, remove, update operations (Admin only)
+  * Implementing search, view, checkout, and return functionalities (User)
+  * Handling dynamic data using array resizing
+  * Using case-insensitive string comparison
+  * Designing menu-driven programs using while loops
+  * Writing modular and reusable methods
+
+## Afternoon Session:
+  * Design and implementation of EduQuiz – Student Quiz Grader
+  * Using arrays to store correct answers and student responses
+  * Implementing quiz evaluation logic using methods
+  * Applying case-insensitive string comparison for answer validation
+  * Printing detailed per-question feedback
+  * Calculating total score and percentage
+  * Displaying pass/fail result based on evaluation criteria
+  * Designing menu-driven quiz applications
+  * Improving logical thinking and flow control
+
+## Key Concepts Applied:
+  * Single-dimensional arrays
+  * Dynamic array resizing
+  * Menu-driven programming
+  * Role-based access control (basic passcode approach)
+  * Case-insensitive string comparison
+  * Loops (for, while)
+  * Conditional statements (if-else, switch)
+  * Modular programming using methods
+  * Input validation and error handling
+  * Logical problem-solving
+
+## Task for the Day:
+  * Build real-world scenario-based applications in C#
+  * Implement secure admin and user functionalities
+  * Practice dynamic data handling with arrays
+  * Strengthen logic-building skill
+  * Debug and refine existing code
+  * Improve readability and structure of programs
+  * Push LMS and Quiz Grader projects to GitHub
