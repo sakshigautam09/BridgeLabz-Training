@@ -2,7 +2,7 @@
 BridgeLabz Training Data
 
 <!-- -------------------------------------------------------- -->
-# Day 1 — December 16, 2025 — Git & GitHub Basics
+# Day — December 16, 2025 — Git & GitHub Basics
 ## Topic: Introduction to Git and GitHub
 ## What I Learned
 * Basics of Git and GitHub
@@ -20,7 +20,7 @@ BridgeLabz Training Data
 * Converting code between languages
 
 <!-- ---------------------------------------------------------------- -->
-# Day 2 — December 17, 2025 — GitHub Setup & Java Basics
+# Day — December 17, 2025 — GitHub Setup & Java Basics
 ## Topic: GitHub Repository Setup, Folder Structure Organization
 ## What I Learned
 * Setting up a GitHub repository for project tracking
@@ -37,7 +37,7 @@ BridgeLabz Training Data
 * Converting Java code to C# and learning branch/folder management
 
 <!-- ------------------------------------------------------------ -->
-# Day 3 — December 18, 2025 — Introduction to .NET and C#
+# Day — December 18, 2025 — Introduction to .NET and C#
 ## Topic: .NET Framework, C# Syntax, Java to C# Conversion
 ## What I Learned
 
@@ -66,7 +66,7 @@ BridgeLabz Training Data
 * Learn IL, MSIL, and .NET execution flow
 
 <!-- -------------------------------------------------------------- -->
-# Day 4 — December 19, 2025 — Introduction to Datatypes and Opeartors in C#
+# Day — December 19, 2025 — Introduction to Datatypes and Opeartors in C#
 ## Topic: .Net Achitecture, Compiler Explanation, Datatypes & Operators, Memory usage, Access modifiers
 ## What I Learned
 
