@@ -99,3 +99,114 @@
     * Push both projects to GitHub
 
 <!-- --------------------------------------------------- -->
+## Day — January 2, 2026
+## Topic: Scenario-Based Programming & OOP Concepts in C#
+## Invoice Generator, Classes & Objects, Bus Route Distance Tracker
+## What I Learned
+
+## Morning Session:
+ * Designing an Invoice Generator for Freelancers
+ * Working with real-world invoice scenarios
+ * Handling string inputs with multiple items and prices
+ * Splitting strings to extract task names and amounts
+ * Parsing numeric values from strings
+ * Calculating total invoice amount dynamically
+ * Using methods to separate business logic
+ * Implementing menu-driven programs
+ * Validating user input to avoid errors
+ * Strengthening understanding of scenario-based programming
+
+## Afternoon Session:
+ * Understanding Object-Oriented Programming (OOP) concepts
+ * Learning classes and objects through practical examples
+ * Using constructors for object initialization
+ * Applying the this keyword in constructor
+ * Creating multiple objects from a single class
+ * Designing a Bus Route Distance Tracker
+ * Applying OOP concepts to a real-world transportation scenario
+ * Tracking total distance using loops
+ * Counting the number of stops dynamically
+ * Using while loop for continuous execution
+ * Asking user confirmation to continue or exit
+ * Implementing conditional logic for user decisions
+
+## Key Concepts Applied:
+ * Scenario-based application design
+ * Classes and objects
+ * Constructors and this keyword
+ * Methods and modular programming
+ * String manipulation
+ * Loops (while)
+ * Conditional statements (if-else)
+ * Menu-driven programming
+ * Input validation and error handling
+ * Logical and real-world problem-solving
+
+## Tasks for the Day:
+ * Build an Invoice Generator using scenario-based logic
+ * Practice OOP concepts using classes and objects
+ * Implement a Bus Route Distance Tracker
+ * Apply loops and conditions to real-world problems
+ * Improve code readability and structure
+ * Debug and refine all programs
+ * Push all work to GitHub
+
+<!-- --------------------------------------------------------- -->
+## Day — January 3, 2026
+## Topic: Scenario-Based Programming, OOP Design & C# Language Fundamentals
+## Festival Lucky Draw, Class Diagrams, C# Constructors & Keywords
+## What I Learned
+
+## Morning Session:
+ * Designing a Festival Lucky Draw System using scenario-based logic
+ * Understanding real-world use cases like prize distribution and random selection
+ * Working with classes and objects to model participants and prizes
+ * Implementing random number generation for lucky draw results
+ * Using conditional statements to assign prizes based on outcomes
+ * Applying loops to handle multiple participants
+ * Understanding class diagrams (UML)
+ * Identifying class components:
+    * Class name
+    * Attributes (fields)
+    * Methods (functions)
+* Learning relationships in class diagrams:
+    * Association
+    * Inheritance
+    * Composition
+* Mapping real-world problems into class diagram representations
+
+## Afternoon Session:
+ * Understanding constructors in C#
+ * Learning the purpose of constructors for object initialization
+ * Using parameterized constructors
+ * Applying the this keyword to differentiate instance variables
+ * Understanding constructor chaining
+ * Learning commonly used C# keywords such as:
+    * class, object, new
+    * this, base
+    * static, void
+    * public, private, protected
+ * Understanding access modifiers and their scope
+ * Writing clean and readable C# code using proper keywords
+ * Strengthening object-oriented thinking through constructor-based examples
+
+## Key Concepts Applied:
+ * Scenario-based programming
+ * Classes and objects
+ * Constructors and constructor chaining
+ * this and base keywords
+ * UML class diagrams
+ * C# keywords and syntax fundamentals
+ * Loops and conditional logic
+ * Random number generation
+ * Real-world problem modeling
+ * Code structure and readability
+
+## Tasks for the Day:
+ * Implement a Festival Lucky Draw application
+ * Create class diagrams for real-world scenarios
+ * Practice different types of constructors in C#
+ * Explore and apply essential C# keywords
+ * Strengthen understanding of OOP design principles
+ * Debug and refine all programs
+ * Push all completed work to GitHub
