@@ -210,3 +210,46 @@
  * Strengthen understanding of OOP design principles
  * Debug and refine all programs
  * Push all completed work to GitHub
+
+<!-- ------------------------------------------------------ -->
+## Day — January 4, 2026
+## Topic: Inheritance in C# & Object-Oriented Design
+## Concepts Covered: Single, Multilevel & Hierarchical Inheritance
+
+## What I Learned
+ * Understanding Inheritance in C#
+ * Learned the concept of inheritance and its role in code reusability
+ * Understood the IS-A relationship between base and derived classes
+ * Used the : symbol to inherit one class from another
+ * Learned when and why inheritance should be used in real-world applications
+ * Types of Inheritance Implemented
+    * Single Inheritance
+        * One child class inheriting from one parent class
+    * Multilevel Inheritance
+        * A class derived from another derived class
+    * Hierarchical Inheritance
+        * Multiple subclasses inheriting from a single superclass
+ * Key OOP Principles Applied
+ * Method overriding to customize subclass behavior
+ * Constructor chaining using base keyword
+ * Proper use of access modifiers (public, protected)
+ * Avoiding deep inheritance hierarchies
+ * Following Liskov Substitution Principle (LSP)
+
+## Key Concepts Applied
+ * Inheritance (:)
+ * IS-A relationship
+ * Code reusability
+ * Method overriding
+ * Constructor chaining
+ * Polymorphism (basic usage)
+ * Clean class design
+ * Real-world problem modeling
+
+## Tasks Completed
+ * Implemented multiple inheritance-based programs in C#
+ * Practiced single, multilevel, and hierarchical inheritance
+ * Designed real-world scenarios using inheritance
+ * Tested and debugged all programs
+ * Improved understanding of object-oriented design
+ * Pushed all completed work to GitHub
