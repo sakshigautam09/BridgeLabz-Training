@@ -253,3 +253,100 @@
  * Tested and debugged all programs
  * Improved understanding of object-oriented design
  * Pushed all completed work to GitHub
+
+ <!-- --------------------------------------------------------------- -->
+## Day — January 5, 2026
+## Topic: Scenario-Based Programming in C# & Object-Oriented Design
+## Project: Hospital & Patient Management System
+
+## What I Learned
+ * Understanding scenario-based application development in C#
+ * Learned how to model real-world hospital workflows using OOP
+ * Understood relationships between Hospital, Doctor, and Patient classes
+ * Applied object-oriented thinking instead of procedural coding
+ * Learned the importance of proper class responsibility design
+ * Improved ability to translate real-life problems into code structure
+
+## Scenario Description
+ * Designed a Hospital & Patient Management System
+ * Hospital manages patients and doctors
+ * Patients are registered with basic detail
+ * Doctors are assigned to patients for consultation
+ * System follows realistic execution flow instead of hardcoded output
+
+## Key OOP Principles Applied
+ * Encapsulation to protect patient and medical details
+ * Inheritance for role-based entities (Doctor, Specialist)
+ * Polymorphism for role-specific behavior implementation
+ * Constructor usage for proper object initialization
+ * Method overriding where behavior differed
+ * Proper use of access modifiers (private, protected, public)
+
+## Key Concepts Applied
+ * Classes & Objects
+ * HAS-A relationship (Hospital has Doctors and Patients)
+ * IS-A relationship (Specialist is a Doctor)
+ * Scenario-based logic flow
+ * Code reusability
+ * Clean class design
+ * Real-world problem modeling
+
+## Tasks Completed
+ * Designed Hospital, Patient, and Doctor classes
+ * Implemented patient registration functionality
+ * Implemented doctor management logic
+ * Assigned patients to doctors
+ * Tested system with multiple patients
+ * Debugged logical and design issues
+ * Improved code readability and structure
+ * Pushed completed Hospital Management System to GitHub
+
+<!-- ---------------------------------------------------------------- -->
+## Day — January 6, 2026
+## Topic: Scenario-Based Programming & OOP in C#
+## Projects: Vehicle Rental System, Bird Sanctuary, Call Log Manager
+
+## What I Learned
+ * Designed multiple scenario-based systems in one day
+ * Strengthened Inheritance, Interfaces, and Polymorphism skills
+ * Modeled real-world entities using classes and objects
+ * Applied encapsulation and clean OOP design
+ * Used arrays and iteration for dynamic behavior
+
+## Morning Session: Vehicle Rental System
+ * Managed Vehicles: Bike, Car, Truck, and Customers
+ * Implemented IRentable interface with CalculateRent()
+ * Used protected fields in Vehicle class
+ * Applied polymorphism for rental calculation
+ * Tested customer rentals
+
+## Afternoon Session:
+    # Bird Sanctuary System
+        * Created Bird base class and derived classes
+        * Implemented IFlyable and ISwimmable interfaces
+        * Stored birds in array and iterated through them
+        * Used polymorphism to call Fly/Swim dynamically
+        * Simulated bird behaviors
+
+    # Customer Service Call Log Manager
+        * Stored call logs with phone, message, and timestamp
+        * Implemented AddCallLog(), SearchByKeyword(), FilterByTime()
+        * Used array to store and iterate logs
+        * Filtered logs by keywords and time range
+        * Tested addition, search, and filtering
+
+## Key OOP Principles Applied
+ * Classes & Objects
+ * Inheritance and IS-A relationships
+ * Interfaces for behavior contracts
+ * Polymorphism for dynamic behavior
+ * Encapsulation and constructor usage
+ * Separation of responsibilities
+
+## Tasks Completed
+ * Designed and implemented three systems
+ * Tested all features for correctness
+ * Used arrays and iteration
+ * Applied method overriding and interface implementation
+ * Maintained clean code structure
+ * Pushed projects to GitHub
