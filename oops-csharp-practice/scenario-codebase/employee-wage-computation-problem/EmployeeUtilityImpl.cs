@@ -5,7 +5,8 @@ class EmployeeUtilityImpl : IEmployee
     private const int WAGE_PER_HOUR = 20;
     private const int FULL_DAY_HOUR = 8;
     private const int PART_TIME_HOUR = 8;
-    private const int WORKING_DAYS_PER_MONTH = 20;
+    private const int MAX_WORKING_DAYS = 20;
+    private const int MAX_WORKING_HOURS = 100;
 
     public Employee AddEmployee(Employee employee)
     {
@@ -55,7 +56,7 @@ class EmployeeUtilityImpl : IEmployee
         Console.WriteLine("\nCalculating Monthly Wage for Employee Id: " + employee.EmployeeId +
                           ", Name: " + employee.EmployeeName);
 
-        for (int day = 1; day <= WORKING_DAYS_PER_MONTH; day++)
+        for (int day = 1; day <= MAX_WORKING_DAYS; day++)
         {
             int attendance = random.Next(0, 2);
             bool isPresent = attendance == 1;
@@ -64,8 +65,7 @@ class EmployeeUtilityImpl : IEmployee
 
             if (isPresent)
             {
-                // Full-time or part-time determination
-                dailyWage = WAGE_PER_HOUR * FULL_DAY_HOUR; // full-time wage
+                dailyWage = WAGE_PER_HOUR * FULL_DAY_HOUR;
             }
 
             totalWage += dailyWage;
@@ -74,5 +74,37 @@ class EmployeeUtilityImpl : IEmployee
         }
 
         Console.WriteLine("Total Monthly Wage: " + totalWage);
+    }
+
+    public void CalculateWageTillCondition(Employee employee)
+    {
+        int totalHours = 0;
+        int totalWage = 0;
+        int workingDays = 0;
+        Random random = new Random();
+
+        Console.WriteLine("\nCalculating Wages Till Condition for Employee Id: " + employee.EmployeeId +
+                          ", Name: " + employee.EmployeeName);
+
+        while (totalHours < MAX_WORKING_HOURS && workingDays < MAX_WORKING_DAYS)
+        {
+            workingDays++;
+            int attendance = random.Next(0, 2);
+            bool isPresent = attendance == 1;
+
+            int hoursWorked = isPresent ? FULL_DAY_HOUR : 0;
+            int dailyWage = hoursWorked * WAGE_PER_HOUR;
+
+            totalHours += hoursWorked;
+            totalWage += dailyWage;
+
+            Console.WriteLine("Day " + workingDays + ": " + (isPresent ? "Present" : "Absent") +
+                              " | Hours Worked: " + hoursWorked +
+                              " | Daily Wage: " + dailyWage);
+        }
+
+        Console.WriteLine("Total Days Worked: " + workingDays);
+        Console.WriteLine("Total Hours Worked: " + totalHours);
+        Console.WriteLine("Total Wage: " + totalWage);
     }
 }

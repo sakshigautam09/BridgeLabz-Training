@@ -5,4 +5,5 @@ public interface IEmployee
     void CalculateDailyWage(Employee employee); //UC-2
     void CalculatePartTimeWage(Employee employee);  // UC-3
     void CalculateMonthlyWage(Employee employee);  // UC-5
+    void CalculateWageTillCondition(Employee employee);  // UC-6
 }

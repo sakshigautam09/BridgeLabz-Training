@@ -15,7 +15,8 @@ sealed class EmployeeMenu
             Console.WriteLine("1. Full-Time Employee Daily Wage");
             Console.WriteLine("2. Part-Time Employee Daily Wage");
             Console.WriteLine("3. Monthly Wage (Full-Time)");
-            Console.WriteLine("4. Exit");
+            Console.WriteLine("4. Wage Till Condition (100 Hrs or 20 Days)");
+            Console.WriteLine("5. Exit");
             Console.Write("Enter your choice: ");
             int choice = int.Parse(Console.ReadLine());
 
@@ -34,6 +35,10 @@ sealed class EmployeeMenu
                     break;
 
                 case 4:
+                    HandleWageTillCondition();
+                    break;
+
+                case 5:
                     exit = true;
                     Console.WriteLine("Exiting Menu...");
                     break;
@@ -66,6 +71,13 @@ sealed class EmployeeMenu
         Employee employee = ReadEmployeeDetails();
         emp.AddEmployee(employee);
         emp.CalculateMonthlyWage(employee);
+    }
+
+    private void HandleWageTillCondition()
+    {
+        Employee employee = ReadEmployeeDetails();
+        emp.AddEmployee(employee);
+        emp.CalculateWageTillCondition(employee);
     }
 
     private Employee ReadEmployeeDetails()
