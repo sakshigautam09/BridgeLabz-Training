@@ -2,6 +2,9 @@ using System;
 
 class EmployeeUtilityImpl : IEmployee
 {
+    private const int WAGE_PER_HOUR = 20;
+    private const int FULL_DAY_HOUR = 8;
+
     public Employee AddEmployee(Employee employee)
     {
         return employee;
@@ -12,13 +15,21 @@ class EmployeeUtilityImpl : IEmployee
         Random random = new Random();
         int attendance = random.Next(0, 2);
 
-        if (attendance == 1)
+        employee.IsPresent = attendance == 1;
+    }
+
+    public void CalculateDailyWage(Employee employee)
+    {
+        int dailyWage = 0;
+
+        if (employee.IsPresent)
         {
-            employee.IsPresent = true;
+            dailyWage = WAGE_PER_HOUR * FULL_DAY_HOUR;
         }
-        else
-        {
-            employee.IsPresent = false;
-        }
+
+        Console.WriteLine("Employee Id: " + employee.EmployeeId);
+        Console.WriteLine("Employee Name: " + employee.EmployeeName);
+        Console.WriteLine("Attendance: " + (employee.IsPresent ? "Present" : "Absent"));
+        Console.WriteLine("Daily Wage: " + dailyWage);
     }
 }

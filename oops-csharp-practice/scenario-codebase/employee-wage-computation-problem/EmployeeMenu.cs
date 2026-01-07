@@ -8,13 +8,20 @@ sealed class EmployeeMenu
     {
         emp = new EmployeeUtilityImpl();
 
+        // Read Employee Details from user
         Employee employee = new Employee();
-        employee.EmployeeId = 101;
-        employee.EmployeeName = "John";
 
+        Console.Write("Enter Employee Id: ");
+        employee.EmployeeId = int.Parse(Console.ReadLine());
+
+        Console.Write("Enter Employee Name: ");
+        employee.EmployeeName = Console.ReadLine();
+
+        // UC-1: Check Attendance
         emp.AddEmployee(employee);
         emp.CheckAttendance(employee);
 
-        Console.WriteLine(employee);
+        // UC-2: Calculate Daily Wage
+        emp.CalculateDailyWage(employee);
     }
 }
