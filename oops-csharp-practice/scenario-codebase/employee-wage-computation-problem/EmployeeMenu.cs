@@ -14,7 +14,8 @@ sealed class EmployeeMenu
             Console.WriteLine("\n===== Employee Menu =====");
             Console.WriteLine("1. Full-Time Employee Daily Wage");
             Console.WriteLine("2. Part-Time Employee Daily Wage");
-            Console.WriteLine("3. Exit");
+            Console.WriteLine("3. Monthly Wage (Full-Time)");
+            Console.WriteLine("4. Exit");
             Console.Write("Enter your choice: ");
             int choice = int.Parse(Console.ReadLine());
 
@@ -29,6 +30,10 @@ sealed class EmployeeMenu
                     break;
 
                 case 3:
+                    HandleMonthlyWage();
+                    break;
+
+                case 4:
                     exit = true;
                     Console.WriteLine("Exiting Menu...");
                     break;
@@ -54,6 +59,13 @@ sealed class EmployeeMenu
         emp.AddEmployee(employee);
         emp.CheckAttendance(employee);
         emp.CalculatePartTimeWage(employee);
+    }
+
+    private void HandleMonthlyWage()
+    {
+        Employee employee = ReadEmployeeDetails();
+        emp.AddEmployee(employee);
+        emp.CalculateMonthlyWage(employee);
     }
 
     private Employee ReadEmployeeDetails()
