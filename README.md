@@ -350,3 +350,48 @@
  * Applied method overriding and interface implementation
  * Maintained clean code structure
  * Pushed projects to GitHub
+
+ <!-- --------------------------------------------------- -->
+## Day — January 7, 2026
+## Topic: Core OOP Concepts in C#
+## Projects: OOP Concept Demos, Employee Wage Computation System
+
+## What I Learned
+ * Understood and applied all four core OOP principles
+ * Learned how encapsulation, abstraction, inheritance, and polymorphism work together
+ * Modeled real-world problems using proper OOP design
+ * Improved code structure and reusability
+ * Strengthened object-oriented thinking in C#
+
+## Morning Session: "Core OOP Concepts in C#"
+ * Applied Encapsulation using private fields and public properties
+ * Implemented Abstraction using abstract classes and interfaces
+ * Used Inheritance to create IS-A relationships between classes
+ * Applied Polymorphism through method overriding and base-class references
+ * Compared real-world scenarios to OOP concepts for better understanding
+
+## Afternoon Session: "Employee Wage Computation Problem" 
+ * Modeled Employee class with encapsulated wage data  
+ * Stored employee details like ID, name, and working hours  
+ * Calculated daily and monthly wages using methods  
+ * Applied validation for working hours and wage limits  
+ * Used arrays to store and process multiple employees  
+ * Applied polymorphism for different employee types  
+
+## Key OOP Principles Applied
+ * Encapsulation and data hiding
+ * Abstraction using abstract classes and interfaces
+ * Inheritance for code reuse
+ * Polymorphism for dynamic behavior
+ * Constructors and property validation
+
+## Tasks Completed
+ * Implemented examples covering all OOP principles
+ * Designed Employee Wage Computation system
+ * Tested abstraction and polymorphic behavior
+ * Validated business rules
+ * Maintained clean and structured code
+ * Pushed implementations to GitHub
+
+ <!-- ----------------------------------------------------------- -->
+ 
