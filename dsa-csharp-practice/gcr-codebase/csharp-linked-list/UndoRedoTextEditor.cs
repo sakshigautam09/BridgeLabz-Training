@@ -69,8 +69,6 @@ class TextEditor
             Console.WriteLine("No text available.");
     }
 }
-
-// Main
 class UndoRedoTextEditor
 {
     static void Main()
