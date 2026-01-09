@@ -186,7 +186,7 @@ class RoundRobinScheduler
 }
 
 // Main
-class RoundRobinSchedulingAlgoti
+class RoundRobinSchedulingAlgorithm
 {
     static void Main()
     {
