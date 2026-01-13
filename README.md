@@ -36,3 +36,150 @@
     * Tested logic for different edge cases
     * Maintained structured and readable code
 
+<!-- ------------------------------------------------------- -->
+## Day — January 9, 2026
+## Topic: Linear Data Structures & Real World based problems in C#
+## Projects: Linked List Programs, Stack & Queue Problems, Dictionary-Based Logic, ATM Dispenser System
+
+## What I Learned
+    * Strengthened understanding of core linear data structures
+    * Learned how different data structures solve different real-world problems
+    * Understood internal working without using built-in collections
+    * Improved problem-solving using constraints and edge cases
+
+## Morning Session: Data Structures in C#
+    * Linked Lists
+        * Practiced singly linked list operations
+        * Implemented insertion, deletion, traversal, and search
+        * Understood node-based memory management using references
+    * Stack
+        * Implemented stack using arrays
+        * Applied LIFO principle in practical scenarios
+        * Solved stack-based logical problems
+    * Queue
+        * Implemented queue using arrays
+        * Understood FIFO behavior
+        * Solved problems like circular tour using queue logic
+    * Dictionary (Custom Logic)
+        * Implemented key-value based logic
+        * Avoided using built-in collections to strengthen fundamentals
+        * Understood hashing concept at a logical level
+
+## Afternoon Session: ATM Dispenser System
+    * Designed ATM cash dispensing logic
+    * Implemented note denomination handling
+    * Applied conditional logic for cash availability
+    * Handled edge cases like insufficient balance and invalid amounts
+    * Simulated real-world ATM behavior using structured code
+
+## Key Concepts Applied
+    * Node-based data structures
+    * Stack (LIFO) and Queue (FIFO) principles
+    * Custom dictionary logic
+    * Reference handling in C#
+    * Real-world problem modeling
+
+## Tasks Completed
+    * Implemented multiple linked list programs
+    * Solved stack and queue-based problems
+    * Built ATM Dispenser logic from scratch
+    * Tested edge cases and constraints
+    * Maintained clean, structured, and readable code
+
+<!-- -------------------------------------------------------------- -->
+## Day — January 12, 2026
+## Topic: Scenario-Based OOP Design problems in C#
+## Projects: Metal Factory Pipe Cutting System, LoanBuddy Application, Customer Furniture Manufacturing System
+
+## What I Learned
+    * Applied object-oriented design to industrial and business scenarios
+    * Strengthened understanding of abstraction and interfaces
+    * Learned how polymorphism helps in handling multiple workflows
+    * Improved real-world system modeling using OOP principles
+
+## Morning Session: Metal Factory Pipe Cutting System
+    * Designed pipe and cutting process models
+    * Used abstraction to define cutting operations
+    * Implemented interfaces for different cutting strategies
+    * Applied inheritance for shared factory behavior
+    * Used polymorphism to handle multiple pipe-cutting scenarios
+    * Maintained encapsulation to protect internal factory states
+
+## Afternoon Session: LoanBuddy & Furniture Manufacturing System
+    * LoanBuddy Application
+        * Designed loan processing workflow
+        * Used abstract classes for loan applications
+        * Implemented interfaces for approval and verification logic
+        * Applied polymorphism for different loan types
+        * Improved flexibility for future policy changes
+    * Customer Furniture Manufacturing System
+        * Modeled customer-specific furniture orders
+        * Applied inheritance for different furniture types
+        * Used encapsulation for order and material details
+        * Implemented polymorphic behavior for manufacturing processes
+
+## Key Concepts Applied
+    * Encapsulation and data hiding
+    * Abstraction using interfaces and abstract classes
+    * Inheritance for code reuse
+    * Polymorphism for dynamic behavior
+    * Real-world manufacturing and finance domain modeling
+
+## Tasks Completed
+    * Built Metal Factory Pipe Cutting system
+    * Implemented LoanBuddy application logic
+    * Designed Furniture Manufacturing system
+    * Tested multiple scenarios and edge cases
+    * Maintained clean, modular, and readable code
+
+<!-- ------------------------------------------------------ -->
+## Day — January 13, 2026
+## Topic: Data Handling, String Processing & Searching Algorithms in C#
+## Projects: BookBuddy – Digital Bookshelf App, CinemaTime – Movie Schedule Manager, Linear & Binary Search Programs
+
+## What I Learned
+    * Strengthened understanding of array-based data management
+    * Learned how string manipulation works internally without built-in helpers
+    * Improved problem-solving using searching algorithms
+    * Applied clean separation of concerns using utility, interface, and main classes
+
+## Morning Session: BookBuddy & CinemaTime Applications
+    * BookBuddy – Digital Bookshelf App
+        * Designed a digital bookshelf using arrays only
+        * Applied encapsulation to protect book details
+        * Implemented utility class to handle core logic
+        * Used interfaces to achieve loose coupling
+        * Sorted books alphabetically using manual string comparison logic
+        * Searched books by author using character-by-character matching
+        * Avoided built-in string comparison methods to strengthen core logic
+
+    * CinemaTime – Movie Schedule Manager
+        * Designed movie scheduling system using arrays
+        * Applied encapsulation for movie title and showtime
+        * Implemented keyword-based movie search manually (without Contains)
+        * Used menu-driven main program for user interaction
+        * Separated validation and business logic into utility class
+        * Strengthened understanding of substring search logic
+
+## Afternoon Session: Linear & Binary Search
+    * Implemented Linear Search for unsorted data
+    * Understood step-by-step working of sequential searching
+    * Implemented Binary Search on sorted arrays
+    * Learned the importance of sorting before applying binary search
+    * Compared time complexity of linear vs binary search
+    * Practiced dry-run analysis to understand index movement
+
+## Key Concepts Applied
+    * Encapsulation and clean class design
+    * Interfaces for abstraction and loose coupling
+    * Array-based data handling
+    * Manual string comparison and substring search
+    * Linear Search and Binary Search algorithms
+    * Time complexity awareness
+
+## Tasks Completed
+    * Built BookBuddy application using arrays only
+    * Implemented CinemaTime movie management system
+    * Practiced manual string search and sorting logic
+    * Implemented and tested Linear and Binary Search programs
+    * Maintained readable, modular, and structured code
