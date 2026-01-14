@@ -1,4 +1,5 @@
 using System;
+// UC-1 (encapsulated class creation)
 public class Contact
 {
     private string firstName;
