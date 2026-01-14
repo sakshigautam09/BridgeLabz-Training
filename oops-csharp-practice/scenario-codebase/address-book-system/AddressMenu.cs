@@ -15,7 +15,7 @@ public class AddressMenu
 
         while (!exit)
         {
-            Console.WriteLine("\n=== Address Book Menu ===");
+            Console.WriteLine("\n--- Address Book Menu ---");
             Console.WriteLine("1. Add Contact");
             Console.WriteLine("2. Display Contacts");
             Console.WriteLine("3. Edit Contact");

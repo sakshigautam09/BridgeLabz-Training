@@ -14,6 +14,7 @@ public class AddressBookUtilityImpl : IAddressBook
         count = 0;
     }
 
+    // UC-2 + UC-5 (extended)
     public void AddContact()
     {
         if (count >= contacts.Length)
@@ -56,6 +57,7 @@ public class AddressBookUtilityImpl : IAddressBook
         Console.WriteLine("Contact added successfully!");
     }
 
+    // UC-1 + UC-5 (extended)
     public void DisplayContacts()
     {
         if (count == 0)
@@ -64,22 +66,21 @@ public class AddressBookUtilityImpl : IAddressBook
             return;
         }
 
-        Console.WriteLine("\n--- Address Book Contacts ---");
-
         for (int i = 0; i < count; i++)
         {
             Console.WriteLine("\nContact " + (i + 1));
-            Console.WriteLine("First Name : " + contacts[i].GetFirstName());
-            Console.WriteLine("Last Name  : " + contacts[i].GetLastName());
-            Console.WriteLine("Address    : " + contacts[i].GetAddress());
-            Console.WriteLine("City       : " + contacts[i].GetCity());
-            Console.WriteLine("State      : " + contacts[i].GetState());
-            Console.WriteLine("Zip        : " + contacts[i].GetZip());
-            Console.WriteLine("Phone      : " + contacts[i].GetPhoneNumber());
-            Console.WriteLine("Email      : " + contacts[i].GetEmail());
+            Console.WriteLine("First Name: " + contacts[i].GetFirstName());
+            Console.WriteLine("Last Name: " + contacts[i].GetLastName());
+            Console.WriteLine("Address: " + contacts[i].GetAddress());
+            Console.WriteLine("City: " + contacts[i].GetCity());
+            Console.WriteLine("State: " + contacts[i].GetState());
+            Console.WriteLine("Zip: " + contacts[i].GetZip());
+            Console.WriteLine("Phone: " + contacts[i].GetPhoneNumber());
+            Console.WriteLine("Email: " + contacts[i].GetEmail());
         }
     }
 
+    // UC-3 (extended for multiple contacts)
     public void EditContact()
     {
         Console.Write("\nEnter First Name to edit: ");
@@ -89,27 +90,22 @@ public class AddressBookUtilityImpl : IAddressBook
         {
             if (contacts[i].GetFirstName().Equals(name))
             {
-                Console.WriteLine("Enter new details:");
-
-                Console.Write("Last Name: ");
-                contacts[i].SetLastName(Console.ReadLine());
-
-                Console.Write("Address: ");
+                Console.Write("New Address: ");
                 contacts[i].SetAddress(Console.ReadLine());
 
-                Console.Write("City: ");
+                Console.Write("New City: ");
                 contacts[i].SetCity(Console.ReadLine());
 
-                Console.Write("State: ");
+                Console.Write("New State: ");
                 contacts[i].SetState(Console.ReadLine());
 
-                Console.Write("Zip: ");
+                Console.Write("New Zip: ");
                 contacts[i].SetZip(Console.ReadLine());
 
-                Console.Write("Phone Number: ");
+                Console.Write("New Phone: ");
                 contacts[i].SetPhoneNumber(Console.ReadLine());
 
-                Console.Write("Email: ");
+                Console.Write("New Email: ");
                 contacts[i].SetEmail(Console.ReadLine());
 
                 Console.WriteLine("Contact updated successfully!");
@@ -120,6 +116,7 @@ public class AddressBookUtilityImpl : IAddressBook
         Console.WriteLine("Contact not found.");
     }
 
+    // UC-4 (extended for multiple contacts)
     public void DeleteContact()
     {
         Console.Write("\nEnter First Name to delete: ");
