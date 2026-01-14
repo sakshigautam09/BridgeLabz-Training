@@ -40,4 +40,48 @@ public class AddressBookUtilityImpl : IAddressBook
             contact.GetEmail()
         );
     }
+    // UC-3
+    public void EditContact(Contact contact)
+    {
+        Console.Write("\nEnter First Name to Edit Contact: ");
+        string name = Console.ReadLine();
+
+        if (contact == null)
+        {
+            Console.WriteLine("No contact available to edit.");
+            return;
+        }
+
+        if (contact.GetFirstName().Equals(name))
+        {
+            Console.WriteLine("\nEditing Contact Details:");
+
+            Console.Write("New Last Name: ");
+            contact.SetLastName(Console.ReadLine());
+
+            Console.Write("New Address: ");
+            contact.SetAddress(Console.ReadLine());
+
+            Console.Write("New City: ");
+            contact.SetCity(Console.ReadLine());
+
+            Console.Write("New State: ");
+            contact.SetState(Console.ReadLine());
+
+            Console.Write("New Zip: ");
+            contact.SetZip(Console.ReadLine());
+
+            Console.Write("New Phone Number: ");
+            contact.SetPhoneNumber(Console.ReadLine());
+
+            Console.Write("New Email: ");
+            contact.SetEmail(Console.ReadLine());
+
+            Console.WriteLine("\nContact updated successfully!");
+        }
+        else
+        {
+            Console.WriteLine("Contact not found with given name.");
+        }
+    }
 }

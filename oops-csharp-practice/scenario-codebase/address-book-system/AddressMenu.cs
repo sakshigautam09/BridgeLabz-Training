@@ -1,4 +1,5 @@
 using System;
+
 public class AddressMenu
 {
     private IAddressBook addressBookUtility;
@@ -18,8 +19,10 @@ public class AddressMenu
             Console.WriteLine("\n=== Address Book Menu ===");
             Console.WriteLine("1. Add Contact");
             Console.WriteLine("2. Display Contact");
-            Console.WriteLine("3. Exit");
-            Console.Write("Enter your choice: ");
+            Console.WriteLine("3. Edit Contact");
+            Console.WriteLine("4. Exit");
+            Console.Write("Enter choice: ");
+
             string choice = Console.ReadLine();
 
             switch (choice)
@@ -32,16 +35,20 @@ public class AddressMenu
                     if (contact != null)
                         addressBookUtility.DisplayContact(contact);
                     else
-                        Console.WriteLine("No contact available. Add first.");
+                        Console.WriteLine("No contact available.");
                     break;
 
                 case "3":
+                    addressBookUtility.EditContact(contact);
+                    break;
+
+                case "4":
                     exit = true;
-                    Console.WriteLine("Exiting Address Book. Goodbye!");
+                    Console.WriteLine("Exiting Address Book...");
                     break;
 
                 default:
-                    Console.WriteLine("Invalid choice. Try again.");
+                    Console.WriteLine("Invalid choice.");
                     break;
             }
         }
