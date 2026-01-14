@@ -27,7 +27,33 @@ class AddressBookMain
         // Create Contact object (UC-1)
         Contact contact = new Contact(firstName, lastName, address, city, state, zip, phoneNumber, email);
         Console.WriteLine("\nContact Created Successfully:");
+
         Console.WriteLine(contact.GetFirstName() + " " + contact.GetLastName() + ", " + contact.GetCity() + ", " +
         contact.GetState() + ", " + contact.GetPhoneNumber() + ", " + contact.GetEmail());
+
+
+
+        // Create AddressBook object (UC-2) – has-a relationship
+        AddressBook addressBook = new AddressBook(contact);
+
+        Console.WriteLine("\nContact added successfully!");
+        Console.WriteLine("Contact Details:");
+        Console.WriteLine(contact.GetFirstName() + " " + contact.GetLastName() + ", " + contact.GetCity() + ", " +
+            contact.GetState() + ", " + contact.GetPhoneNumber() + ", " + contact.GetEmail());
+        }
     }
-}
+
+    // AddressBook class (UC-2)
+    public class AddressBook
+    {
+        private Contact contact; // Has-a relationship
+
+        public AddressBook(Contact contact)
+        {
+            this.contact = contact;
+        }
+        public Contact GetContact()
+        {
+            return contact;
+        }
+    }
