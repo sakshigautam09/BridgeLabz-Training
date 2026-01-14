@@ -84,4 +84,25 @@ public class AddressBookUtilityImpl : IAddressBook
             Console.WriteLine("Contact not found with given name.");
         }
     }
+    // UC-4
+    public Contact DeleteContact(Contact contact)
+    {
+        Console.Write("\nEnter First name to delete contact: ");
+        string name = Console.ReadLine();
+
+        if (contact == null)
+        {
+            Console.WriteLine("No contact available to delete.");
+            return null;
+        }
+
+        if (contact.GetFirstName().Equals(name))
+        {
+            Console.WriteLine("Contact deleted successfully!");
+            return null; // deleting contact
+        }
+
+        Console.WriteLine("Contact not found.");
+        return contact;
+    }
 }

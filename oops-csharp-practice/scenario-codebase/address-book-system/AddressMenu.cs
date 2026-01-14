@@ -20,7 +20,8 @@ public class AddressMenu
             Console.WriteLine("1. Add Contact");
             Console.WriteLine("2. Display Contact");
             Console.WriteLine("3. Edit Contact");
-            Console.WriteLine("4. Exit");
+            Console.WriteLine("4. Delete Contact");
+            Console.WriteLine("5. Exit");
             Console.Write("Enter choice: ");
 
             string choice = Console.ReadLine();
@@ -43,6 +44,10 @@ public class AddressMenu
                     break;
 
                 case "4":
+                    contact = addressBookUtility.DeleteContact(contact);
+                    break;
+
+                case "5":
                     exit = true;
                     Console.WriteLine("Exiting Address Book...");
                     break;
