@@ -2,12 +2,11 @@ using System;
 
 public class AddressMenu
 {
-    private IAddressBook addressBookUtility;
-    private Contact contact;
+    private IAddressBook addressBook;
 
     public AddressMenu()
     {
-        addressBookUtility = new AddressBookUtilityImpl();
+        addressBook = new AddressBookUtilityImpl();
     }
 
     public void ShowMenu()
@@ -18,7 +17,7 @@ public class AddressMenu
         {
             Console.WriteLine("\n=== Address Book Menu ===");
             Console.WriteLine("1. Add Contact");
-            Console.WriteLine("2. Display Contact");
+            Console.WriteLine("2. Display Contacts");
             Console.WriteLine("3. Edit Contact");
             Console.WriteLine("4. Delete Contact");
             Console.WriteLine("5. Exit");
@@ -29,22 +28,19 @@ public class AddressMenu
             switch (choice)
             {
                 case "1":
-                    contact = addressBookUtility.AddContact();
+                    addressBook.AddContact();
                     break;
 
                 case "2":
-                    if (contact != null)
-                        addressBookUtility.DisplayContact(contact);
-                    else
-                        Console.WriteLine("No contact available.");
+                    addressBook.DisplayContacts();
                     break;
 
                 case "3":
-                    addressBookUtility.EditContact(contact);
+                    addressBook.EditContact();
                     break;
 
                 case "4":
-                    contact = addressBookUtility.DeleteContact(contact);
+                    addressBook.DeleteContact();
                     break;
 
                 case "5":
