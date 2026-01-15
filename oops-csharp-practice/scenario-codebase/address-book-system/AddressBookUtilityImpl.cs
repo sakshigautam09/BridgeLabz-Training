@@ -1,3 +1,5 @@
+using System;
+
 public class AddressBookUtilityImpl : IAddressBook
 {
     private Contact[] contacts;  // Array of contacts in this book
@@ -18,7 +20,7 @@ public class AddressBookUtilityImpl : IAddressBook
         count = 0;
     }
 
-    // UC-2 / UC-5: Add single contact
+    // UC-2 / UC-5 / UC-7: Add single contact with duplicate check
     public void AddContact()
     {
         if (count >= contacts.Length)
@@ -32,6 +34,18 @@ public class AddressBookUtilityImpl : IAddressBook
         string firstName = Console.ReadLine();
         Console.Write("Last Name: ");
         string lastName = Console.ReadLine();
+
+        // 🔹 UC-7: Check for duplicate in this address book
+        for (int i = 0; i < count; i++)
+        {
+            if (contacts[i].GetFirstName().Equals(firstName, StringComparison.OrdinalIgnoreCase)
+                && contacts[i].GetLastName().Equals(lastName, StringComparison.OrdinalIgnoreCase))
+            {
+                Console.WriteLine("Duplicate contact! Person already exists in this address book.");
+                return; // Stop adding
+            }
+        }
+
         Console.Write("Address: ");
         string address = Console.ReadLine();
         Console.Write("City: ");
@@ -65,7 +79,7 @@ public class AddressBookUtilityImpl : IAddressBook
             }
 
             Console.WriteLine($"\nAdding Contact {i + 1}");
-            AddContact();  // No duplicate check
+            AddContact();  // Duplicate check runs inside AddContact
         }
     }
 
