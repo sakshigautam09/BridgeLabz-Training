@@ -314,4 +314,48 @@ public class AddressBookUtilityImpl : IAddressBook
         if (!found)
             Console.WriteLine("No persons found in state: " + state);
     }
+    // UC-10: Count contacts by City across all address books
+    public static void CountByCity()
+    {
+        Console.Write("Enter City: ");
+        string city = Console.ReadLine();
+        int totalCount = 0;
+
+        for (int i = 0; i < bookCount; i++)
+        {
+            AddressBookUtilityImpl book = addressBooksArray[i];
+
+            for (int j = 0; j < book.count; j++)
+            {
+                if (book.contacts[j].GetCity().Equals(city, StringComparison.OrdinalIgnoreCase))
+                {
+                    totalCount++;
+                }
+            }
+        }
+
+        Console.WriteLine("Total number of contacts in city '" + city + "' = " + totalCount);
+    }
+    // UC-10: Count contacts by State across all address books
+    public static void CountByState()
+    {
+        Console.Write("Enter State: ");
+        string state = Console.ReadLine();
+        int totalCount = 0;
+
+        for (int i = 0; i < bookCount; i++)
+        {
+            AddressBookUtilityImpl book = addressBooksArray[i];
+
+            for (int j = 0; j < book.count; j++)
+            {
+                if (book.contacts[j].GetState().Equals(state, StringComparison.OrdinalIgnoreCase))
+                {
+                    totalCount++;
+                }
+            }
+        }
+
+        Console.WriteLine("Total number of contacts in state '" + state + "' = " + totalCount);
+    }
 }

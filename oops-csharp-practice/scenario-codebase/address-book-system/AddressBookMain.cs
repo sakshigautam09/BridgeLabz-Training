@@ -14,6 +14,9 @@ public class AddressBookMain
             Console.WriteLine("5. Search Person by State (all books)"); // UC-8
             Console.WriteLine("6. View Persons by City");   // UC-9
             Console.WriteLine("7. View Persons by State");  // UC-9
+            Console.WriteLine("8. Count Contacts by City");   // UC-10
+            Console.WriteLine("9. Count Contacts by State");  // UC-10
+
 
             Console.WriteLine("0. Exit");
 
@@ -56,6 +59,13 @@ public class AddressBookMain
                 case 7:
                     AddressBookUtilityImpl.ViewPersonsByState();
                     break;
+                case 8:
+                    AddressBookUtilityImpl.CountByCity();
+                    break;
+                case 9:
+                    AddressBookUtilityImpl.CountByState();
+                    break;
+
 
                 case 0:
                     Console.WriteLine("Exiting Program.");
