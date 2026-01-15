@@ -42,4 +42,16 @@ public class Contact
     public void SetZip(string value) { zip = value; }
     public void SetPhoneNumber(string value) { phoneNumber = value; }
     public void SetEmail(string value) { email = value; }
+
+    // 🔹 UC-11: Override ToString()
+    public override string ToString()
+    {
+        return "Name: " + firstName + " " + lastName +
+               "\nAddress: " + address +
+               "\nCity: " + city +
+               "\nState: " + state +
+               "\nZip: " + zip +
+               "\nPhone: " + phoneNumber +
+               "\nEmail: " + email;
+    }
 }
