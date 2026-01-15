@@ -14,7 +14,7 @@ public class AddressBookUtilityImpl : IAddressBook
         count = 0;
     }
 
-    // UC-2 + UC-5 (extended)
+    // UC-2 / UC-5 (Single Contact)
     public void AddContact()
     {
         if (count >= contacts.Length)
@@ -50,14 +50,31 @@ public class AddressBookUtilityImpl : IAddressBook
         string email = Console.ReadLine();
 
         contacts[count] = new Contact(
-            firstName, lastName, address, city, state, zip, phone, email
-        );
+            firstName, lastName, address, city, state, zip, phone, email);
 
         count++;
         Console.WriteLine("Contact added successfully!");
     }
 
-    // UC-1 + UC-5 (extended)
+    // 🔥 NEW — UC-5 (Multiple Contacts)
+    public void AddMultipleContacts()
+    {
+        Console.Write("How many contacts do you want to add? ");
+        int number = Convert.ToInt32(Console.ReadLine());
+
+        for (int i = 0; i < number; i++)
+        {
+            if (count >= contacts.Length)
+            {
+                Console.WriteLine("Address Book is full.");
+                return;
+            }
+
+            Console.WriteLine("\nAdding Contact " + (i + 1));
+            AddContact();
+        }
+    }
+
     public void DisplayContacts()
     {
         if (count == 0)
@@ -80,32 +97,19 @@ public class AddressBookUtilityImpl : IAddressBook
         }
     }
 
-    // UC-3 (extended for multiple contacts)
     public void EditContact()
     {
-        Console.Write("\nEnter First Name to edit: ");
+        Console.Write("Enter First Name to edit: ");
         string name = Console.ReadLine();
 
         for (int i = 0; i < count; i++)
         {
             if (contacts[i].GetFirstName().Equals(name))
             {
-                Console.Write("New Address: ");
-                contacts[i].SetAddress(Console.ReadLine());
-
-                Console.Write("New City: ");
-                contacts[i].SetCity(Console.ReadLine());
-
-                Console.Write("New State: ");
-                contacts[i].SetState(Console.ReadLine());
-
-                Console.Write("New Zip: ");
-                contacts[i].SetZip(Console.ReadLine());
-
-                Console.Write("New Phone: ");
+                Console.Write("Enter new Phone Number: ");
                 contacts[i].SetPhoneNumber(Console.ReadLine());
 
-                Console.Write("New Email: ");
+                Console.Write("Enter new Email: ");
                 contacts[i].SetEmail(Console.ReadLine());
 
                 Console.WriteLine("Contact updated successfully!");
@@ -116,10 +120,9 @@ public class AddressBookUtilityImpl : IAddressBook
         Console.WriteLine("Contact not found.");
     }
 
-    // UC-4 (extended for multiple contacts)
     public void DeleteContact()
     {
-        Console.Write("\nEnter First Name to delete: ");
+        Console.Write("Enter First Name to delete: ");
         string name = Console.ReadLine();
 
         for (int i = 0; i < count; i++)
@@ -133,7 +136,6 @@ public class AddressBookUtilityImpl : IAddressBook
 
                 contacts[count - 1] = null;
                 count--;
-
                 Console.WriteLine("Contact deleted successfully!");
                 return;
             }

@@ -11,8 +11,8 @@ public class Contact
     private string phoneNumber;
     private string email;
 
-    public Contact(string firstName, string lastName, string address, string city,
-                   string state, string zip, string phoneNumber, string email)
+    public Contact(string firstName, string lastName, string address, string city, string state, string zip, 
+        string phoneNumber, string email)
     {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -23,7 +23,6 @@ public class Contact
         this.phoneNumber = phoneNumber;
         this.email = email;
     }
-
     // Getters
     public string GetFirstName() { return firstName; }
     public string GetLastName() { return lastName; }

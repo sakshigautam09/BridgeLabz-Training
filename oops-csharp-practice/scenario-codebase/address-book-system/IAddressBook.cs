@@ -1,7 +1,8 @@
 public interface IAddressBook
 {
-    void AddContact(); //UC-2
+    void AddContact();               // Single contact
+    void AddMultipleContacts();      // Multiple contacts
     void DisplayContacts();
-    void EditContact(); //UC-3
-    void DeleteContact(); // UC-4
+    void EditContact();
+    void DeleteContact();
 }
