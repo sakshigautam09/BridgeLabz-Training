@@ -13,7 +13,8 @@ public class AddressMenu
     {
         while (true)
         {
-            Console.WriteLine("\n1. Add Single Contact");
+            Console.WriteLine("\n---- ADDRESS BOOK MENU ----");
+            Console.WriteLine("1. Add Single Contact");
             Console.WriteLine("2. Add Multiple Contacts");
             Console.WriteLine("3. Display Contacts");
             Console.WriteLine("4. Edit Contact");
@@ -24,9 +25,7 @@ public class AddressMenu
             int choice = Convert.ToInt32(Console.ReadLine());
 
             if (choice == 0)
-            {
                 break;
-            }
 
             switch (choice)
             {
