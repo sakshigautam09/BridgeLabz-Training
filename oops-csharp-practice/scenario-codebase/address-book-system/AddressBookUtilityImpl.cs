@@ -401,4 +401,99 @@ public class AddressBookUtilityImpl : IAddressBook
             Console.WriteLine("-----------------------");
         }
     }
+    // UC-12: Sort contacts by City
+    public void SortContactsByCity()
+    {
+        if (count == 0)
+        {
+            Console.WriteLine("No contacts to sort.");
+            return;
+        }
+
+        for (int i = 0; i < count - 1; i++)
+        {
+            for (int j = 0; j < count - i - 1; j++)
+            {
+                if (string.Compare(
+                    contacts[j].GetCity(),
+                    contacts[j + 1].GetCity(),
+                    StringComparison.OrdinalIgnoreCase) > 0)
+                {
+                    Contact temp = contacts[j];
+                    contacts[j] = contacts[j + 1];
+                    contacts[j + 1] = temp;
+                }
+            }
+        }
+
+        Console.WriteLine("\nContacts sorted by City:\n");
+        PrintSortedContacts();
+    }
+    // UC-12: Sort contacts by State
+    public void SortContactsByState()
+    {
+        if (count == 0)
+        {
+            Console.WriteLine("No contacts to sort.");
+            return;
+        }
+
+        for (int i = 0; i < count - 1; i++)
+        {
+            for (int j = 0; j < count - i - 1; j++)
+            {
+                if (string.Compare(
+                    contacts[j].GetState(),
+                    contacts[j + 1].GetState(),
+                    StringComparison.OrdinalIgnoreCase) > 0)
+                {
+                    Contact temp = contacts[j];
+                    contacts[j] = contacts[j + 1];
+                    contacts[j + 1] = temp;
+                }
+            }
+        }
+
+        Console.WriteLine("\nContacts sorted by State:\n");
+        PrintSortedContacts();
+    }
+    // UC-12: Sort contacts by Zip
+    public void SortContactsByZip()
+    {
+        if (count == 0)
+        {
+            Console.WriteLine("No contacts to sort.");
+            return;
+        }
+
+        for (int i = 0; i < count - 1; i++)
+        {
+            for (int j = 0; j < count - i - 1; j++)
+            {
+                if (string.Compare(
+                    contacts[j].GetZip(),
+                    contacts[j + 1].GetZip(),
+                    StringComparison.OrdinalIgnoreCase) > 0)
+                {
+                    Contact temp = contacts[j];
+                    contacts[j] = contacts[j + 1];
+                    contacts[j + 1] = temp;
+                }
+            }
+        }
+
+        Console.WriteLine("\nContacts sorted by Zip:\n");
+        PrintSortedContacts();
+    }
+
+    // Common method to print sorted contacts
+    private void PrintSortedContacts()
+    {
+        for (int i = 0; i < count; i++)
+        {
+            Console.WriteLine(contacts[i]);
+            Console.WriteLine("-----------------------");
+        }
+    }
+
 }

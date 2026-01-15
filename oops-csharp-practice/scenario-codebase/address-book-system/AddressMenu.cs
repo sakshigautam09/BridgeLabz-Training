@@ -21,6 +21,10 @@ public class AddressMenu
             Console.WriteLine("5. Delete Contact");
             Console.WriteLine("6. Sort Contacts by Name");
             Console.WriteLine("0. Exit Address Book");
+            Console.WriteLine("7. Sort Contacts by City");
+            Console.WriteLine("8. Sort Contacts by State");
+            Console.WriteLine("9. Sort Contacts by Zip");
+
 
             Console.Write("Enter choice: ");
             int choice = Convert.ToInt32(Console.ReadLine());
@@ -51,6 +55,17 @@ public class AddressMenu
                     break;
                 case 6:
                     addressBook.SortContactsByName();
+                    break;
+                case 7:
+                    addressBook.SortContactsByCity();
+                    break;
+
+                case 8:
+                    addressBook.SortContactsByState();
+                    break;
+
+                case 9:
+                    addressBook.SortContactsByZip();
                     break;
 
                 default:
