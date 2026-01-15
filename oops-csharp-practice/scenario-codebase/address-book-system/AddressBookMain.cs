@@ -12,6 +12,9 @@ public class AddressBookMain
             Console.WriteLine("3. Open Selected Address Book Menu"); // UC-1 to UC-5
             Console.WriteLine("4. Search Person by City (all books)"); // UC-8
             Console.WriteLine("5. Search Person by State (all books)"); // UC-8
+            Console.WriteLine("6. View Persons by City");   // UC-9
+            Console.WriteLine("7. View Persons by State");  // UC-9
+
             Console.WriteLine("0. Exit");
 
 
@@ -45,6 +48,13 @@ public class AddressBookMain
 
                 case 5:
                     AddressBookUtilityImpl.SearchByState();
+                    break;
+                case 6:
+                    AddressBookUtilityImpl.ViewPersonsByCity();
+                    break;
+
+                case 7:
+                    AddressBookUtilityImpl.ViewPersonsByState();
                     break;
 
                 case 0:
