@@ -358,4 +358,47 @@ public class AddressBookUtilityImpl : IAddressBook
 
         Console.WriteLine("Total number of contacts in state '" + state + "' = " + totalCount);
     }
+    // UC-11: Sort contacts alphabetically by Person's name
+    public void SortContactsByName()
+    {
+        if (count == 0)
+        {
+            Console.WriteLine("No contacts to sort.");
+            return;
+        }
+
+        // Bubble Sort (arrays only)
+        for (int i = 0; i < count - 1; i++)
+        {
+            for (int j = 0; j < count - i - 1; j++)
+            {
+                int firstNameCompare = string.Compare(
+                    contacts[j].GetFirstName(),
+                    contacts[j + 1].GetFirstName(),
+                    StringComparison.OrdinalIgnoreCase);
+
+                if (firstNameCompare > 0 ||
+                (firstNameCompare == 0 &&
+                    string.Compare(
+                        contacts[j].GetLastName(),
+                        contacts[j + 1].GetLastName(),
+                        StringComparison.OrdinalIgnoreCase) > 0))
+                {
+                    // Swap
+                    Contact temp = contacts[j];
+                    contacts[j] = contacts[j + 1];
+                    contacts[j + 1] = temp;
+                }
+            }
+        }
+
+        Console.WriteLine("\nContacts sorted alphabetically by name:\n");
+
+        // Print using ToString()
+        for (int i = 0; i < count; i++)
+        {
+            Console.WriteLine(contacts[i]);
+            Console.WriteLine("-----------------------");
+        }
+    }
 }

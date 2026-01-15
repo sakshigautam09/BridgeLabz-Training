@@ -19,6 +19,7 @@ public class AddressMenu
             Console.WriteLine("3. Display Contacts");
             Console.WriteLine("4. Edit Contact");
             Console.WriteLine("5. Delete Contact");
+            Console.WriteLine("6. Sort Contacts by Name");
             Console.WriteLine("0. Exit Address Book");
 
             Console.Write("Enter choice: ");
@@ -47,6 +48,9 @@ public class AddressMenu
 
                 case 5:
                     addressBook.DeleteContact();
+                    break;
+                case 6:
+                    addressBook.SortContactsByName();
                     break;
 
                 default:
