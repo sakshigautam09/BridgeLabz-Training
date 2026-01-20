@@ -184,12 +184,6 @@
     * Implemented and tested Linear and Binary Search programs
     * Maintained readable, modular, and structured code
 
-
-<!-- 14th jan -> address book problem
-15th jan -> browser buddy 
-16th jan -> bookshelf, tarffic mamager
-17th -> flash dealz, fitness tarcker-->
-
 <!-- --------------------------------------------------------- -->
 ## Day — January 14, 2026
 ## Topic: Address Book Application in C#
@@ -283,3 +277,34 @@
     * Array-based data handling for multiple entities
     * Manual sorting and searching algorithms
     * Menu-driven interaction and separation of concerns
+
+<!-- ------------------------------------------------------------ -->
+## Day — January 20, 2026
+## Topic: ParcelTracker & ExamProctor Applications and Generics in C#
+
+## Morning Session: ParcelTracker
+    * Developed a parcel tracking system using Singly Linked List
+    * Encapsulated parcel stages: Packed → Shipped → In Transit → Delivered
+    * Implemented forward tracking and custom intermediate checkpoints
+    * Handled lost/missing parcels using null checks
+    * Strengthened modularity with a utility class managing parcel operations
+
+## Afternoon Session: ExamProctor
+    * Built an online exam review system using Stack, Dictionary, and Generics
+    * Tracked question navigation using a generic stack
+    * Stored student answers in a generic dictionary (questionID → answer)
+    * Implemented scoring logic via functions for automatic evaluation
+    * Applied type-safe design using generics for question and answer management
+
+## Key Concepts Applied
+    * Encapsulation and OOP design principles
+    * Generics for type-safe collections
+    * Stack and Dictionary for navigation and storage
+    * Function-based scoring logic
+    * Separation of concerns and modularity
+
+## Tasks Completed
+    * Implemented ParcelTracker
+    * Implemented ExamProctor with generics
+    * Tested and pushed the code
+
