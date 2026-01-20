@@ -183,3 +183,103 @@
     * Practiced manual string search and sorting logic
     * Implemented and tested Linear and Binary Search programs
     * Maintained readable, modular, and structured code
+
+
+<!-- 14th jan -> address book problem
+15th jan -> browser buddy 
+16th jan -> bookshelf, tarffic mamager
+17th -> flash dealz, fitness tarcker-->
+
+<!-- --------------------------------------------------------- -->
+## Day — January 14, 2026
+## Topic: Address Book Application in C#
+## Projects: AddressBook – Contact Management
+
+## What I Learned
+    * Applied OOP: encapsulation, interfaces, and modular design
+    * Managed multiple contacts using arrays
+    * Practiced manual string comparison for search and sort
+    * Built menu-driven CRUD operations
+
+## Key Concepts Applied
+    * Encapsulation & class design
+    * Interfaces for abstraction
+    * Array-based storage
+    * Manual sorting & linear search
+
+## Tasks Completed
+    * Added, edited, deleted, and displayed contacts
+    * Implemented search by name, city, state, zip
+    * Sorted contacts without built-in methods
+    * Maintained clean, modular code
+
+<!-- ------------------------------------------------------------ -->
+## Day — January 15, 2026
+## Topic: BrowserBuddy – Simple Web Browser in C#
+## Projects: BrowserBuddy – URL Navigation & History Manager
+
+## What I Learned
+    * Built a basic browser interface using console-based menus
+    * Applied OOP: encapsulation for URL/history management
+    * Practiced array-based history storage and navigation
+    * Implemented manual search in browsing history
+    * Strengthened modular design with utility and main classes
+
+## Key Concepts Applied
+    * Encapsulation & class design
+    * Array-based data storage
+    * Manual string search for URLs
+    * Menu-driven interaction
+
+## Tasks Completed
+    * Opened and tracked URLs in history
+    * Searched visited URLs manually
+    * Navigated forward/backward in history
+    * Maintained clean and modular code
+
+<!-- ------------------------------------------------- -->
+## Day — January 16, 2026
+## Topic: TrafficManager & BookShelf Applications in C#
+
+## Morning Session: TrafficManager
+    * Developed a vehicle flow tracking system using arrays
+    * Encapsulated vehicle details liketype, count, and timing
+    * Applied modular design with utility class separating logic from main program
+    * Practiced manual aggregation and reporting without built-in libraries
+
+## Afternoon Session: BookShelf
+    * Managed a digital bookshelf using arrays only
+    * Encapsulated book details (title, author, publisher) to protect data
+    * Implemented manual sorting of books alphabetically and search by author/title
+    * Strengthened understanding of array-based data handling and menu-driven interactions
+    * Maintained modular, reusable code with utility and main class separation
+
+## Key Concepts Applied
+    * Encapsulation and clean OOP design
+    * Array-based data handling for both vehicles and books
+    * Manual searching and sorting algorithms
+    * Menu-driven interaction and separation of concerns
+
+<!-- ------------------------------------------------------ -->
+## Day — January 17, 2026
+## Topic: FlashDealz & FitnessTracker Applications in C#
+
+## Morning Session: FlashDealz
+    * Developed a deals management system using arrays
+    * Encapsulated deal details: product name, discount, and validity
+    * Implemented menu-driven options to add, view, and search deals
+    * Applied manual sorting to display deals by discount or product name
+    * Strengthened modularity with a utility class handling all business logic
+
+## Afternoon Session: FitnessTracker
+    * Built a step-count tracker for multiple users using arrays
+    * Encapsulated user details and daily step counts
+    * Implemented menu-driven ranking system to display daily leaderboard
+    * Applied bubble sort to sort users by step count manually
+    * Practiced real-time updates and manual comparison logic
+
+## Key Concepts Applied
+    * Encapsulation and OOP design principles
+    * Array-based data handling for multiple entities
+    * Manual sorting and searching algorithms
+    * Menu-driven interaction and separation of concerns
