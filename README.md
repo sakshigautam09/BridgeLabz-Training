@@ -308,3 +308,37 @@
     * Implemented ExamProctor with generics
     * Tested and pushed the code
 
+<!-- ------------------------------------------------- -->
+## vDay — January 21, 2026
+## Topic: Backtracking & Radix Sort (DSA Scenario-Based)
+
+## Morning Session: Password Cracker Simulator
+    * Scenario: Try all combinations to unlock a vault.
+    ## Tasks Implemented:
+        * Generate all strings of length n (Scenario A)
+        * Stop recursion when password is matched (Scenario B)
+        * Analyzed time and space complexity (Scenario C)
+
+## Key Concepts:
+    * Backtracking and recursion
+    * Early pruning for optimization
+    * Time complexity: O(kⁿ), Space complexity: O(n)
+
+## Afternoon Session: Aadhar Number Sorting System
+    * Scenario: Sort 12-digit Aadhar numbers and search efficiently.
+    ## Tasks Implemented:
+        * Radix Sort to sort all Aadhar numbers (Scenario A)
+        * Binary Search to find a number post-sorting (Scenario B)
+        * Maintained order of same-prefix numbers (Scenario C)
+
+## Key Concepts:
+    * Radix Sort + Counting Sort for stability
+    * Binary Search on sorted arrays
+    * Time complexity: O(d*(n+k)), Space complexity: O(n)
+
+## Completed Tasks:
+    * Password Cracker Simulator implemented and tested
+    * Aadhar Number Sorting System implemented with Radix Sort and Binary Search
+    * Verified stability and correctness
+    * Analyzed complexity and scenario outcomes
+
