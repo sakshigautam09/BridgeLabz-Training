@@ -78,3 +78,34 @@
     * Built an end-to-end rank sheet generator
     * Reinforced practical usage of collections with streams
     * Practiced writing efficient, readable, and modular C# code
+
+<!-- -------------------------------------------------------------- -->
+## Day — January 29, 2026
+## Topic: C# CSV Data Handling
+
+## Scenarios Implemented
+    * Reading and writing CSV files with headers
+    * Filtering, searching, and counting records
+    * Detecting duplicates based on ID
+    * Sorting CSV data manually by numeric columns
+    * Merging two CSV files based on a common column
+    * Converting between CSV and JSON
+    * Encrypting/decrypting sensitive fields (Salary, Email)
+    * Chunk-based reading for large files
+    * Generating CSV reports and rank sheets
+
+## Key Concepts Applied
+    * StreamReader, StreamWriter, FileStream for file I/O
+    * Collections: List<T>, Dictionary<TKey,TValue>, HashSet<T>
+    * Object-oriented design: classes, constructors, encapsulation
+    * Data validation (regex for emails, numeric checks for phone numbers)
+    * Memory-efficient processing for large CSV files
+    * Manual sorting, aggregation, and reporting logic
+    * Simple encryption/decryption using Base64
+
+## Tasks Completed
+    * End-to-end CSV reading, writing, validation, and reporting
+    * Built reusable C# classes for CSV data handling
+    * Practiced filtering, sorting, merging, and secure handling of sensitive data
+    * Generated reports and rank sheets programmatically
+    * Reinforced modular, efficient, and readable C# coding practices
