@@ -166,55 +166,51 @@
 
 <!-- -------------------------------------------------------------- -->
 ## Day — January 28, 2026
-## Topic: C# Data Handling & Application Logic
+## Topic: Scenario-Based Application Logic & Validations
 
-## Morning Session: C# CSV Data Handling
+## Morning Session: Aero Vigil
 ## Scenarios Implemented
-    * Reading and writing CSV files with headers
-    * Filtering, searching, and counting records
-    * Detecting duplicates based on ID
-    * Sorting CSV data manually by numeric columns
-    * Merging two CSV files based on a common column
-    * Converting between CSV and JSON
-    * Encrypting/decrypting sensitive fields (Salary, Email)
-    * Chunk-based reading for large files
-    * Generating CSV reports and rank sheets
+    * Managing aircraft surveillance records
+    * Tracking flight identifiers and patrol zones
+    * Monitoring altitude and speed compliance
+    * Identifying suspicious or unauthorized aircraft
+    * Generating alert reports based on rule violations
+    * Searching aircraft details using unique IDs
 
 ## Key Concepts Applied
-    * StreamReader, StreamWriter, FileStream for file I/O
-    * Collections: List<T>, Dictionary<TKey, TValue>, HashSet<T>
-    * Object-oriented design: classes, constructors, encapsulation
-    * Data validation (regex for emails, numeric checks)
-    * Memory-efficient processing for large CSV files
-    * Manual sorting, aggregation, and reporting logic
-    * Simple encryption/decryption using Base64
+    * Object-oriented design (classes, constructors, encapsulation)
+    * Collections: List<T>, Dictionary<TKey, TValue>
+    * Conditional validation logic
+    * String parsing and numeric comparisons
+    * Separation of surveillance logic into utility methods
 
 ## Tasks Completed
-    * End-to-end CSV reading, writing, validation, and reporting
-    * Built reusable C# classes for CSV data handling
-    * Practiced filtering, sorting, merging, and secure data handling
-    * Generated automated reports and rank sheets
+    * Designed an air-surveillance workflow using OOP
+    * Implemented rule-based aircraft monitoring
+    * Built reusable methods for tracking and alerts
+    * Strengthened logical thinking with real-world defense scenarios
 
-## Afternoon Session: StreamBuzz & OceanFleet
-    # StreamBuzz – Creator Engagement Tracker
-        * Registered creator profiles with weekly engagement data
-        * Tracked weekly likes across 4 weeks
-        * Identified top-performing creators based on like thresholds
-        * Calculated overall average weekly likes
-        * Implemented menu-driven console interaction
-
-    # OceanFleet – Vessel Performance Analytics
-        * Stored vessel performance details using object collections
-        * Retrieved vessel information using vessel ID
-        * Identified high-performance vessels based on maximum average speed
-        * Applied OOP principles with model and utility classes
+## Afternoon Session: Bank Account Validations
+## Scenarios Implemented
+    * Creating bank accounts with initial balance
+    * Validating deposit operations
+    * Handling negative deposit scenarios
+    * Validating withdrawal limits
+    * Detecting insufficient balance conditions
+    * Exception handling with meaningful messages
 
 ## Key Concepts Applied
-    * Collections: List<T>, Dictionary<TKey, TValue>
-    * Object-oriented programming (models, utilities, encapsulation)
-    * String parsing and validation
-    * Aggregation and comparison logic
-    * Menu-driven console applications
+    * Encapsulation using properties
+    * Constructor-based initialization
+    * Business rule validation using conditions
+    * Exception handling (throw, try-catch)
+    * Unit-test-friendly method design
+
+## Tasks Completed
+    * Implemented secure banking logic
+    * Enforced strict validation rules
+    * Practiced exception-driven error handling
+    * Reinforced real-world financial validation scenarios in C#
 
 <!-- ------------------------------------------------------------- -->
 ## Day — January 29, 2026
