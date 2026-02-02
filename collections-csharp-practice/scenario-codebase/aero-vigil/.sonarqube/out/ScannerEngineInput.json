@@ -1,0 +1,96 @@
+{
+  "scannerProperties": [
+    {
+      "key": "sonar.scanner.app",
+      "value": "ScannerMSBuild"
+    },
+    {
+      "key": "sonar.scanner.appVersion",
+      "value": "11.0"
+    },
+    {
+      "key": "sonar.scanner.bootstrapStartTime",
+      "value": "1770014068000"
+    },
+    {
+      "key": "sonar.projectKey",
+      "value": "aero-vigil"
+    },
+    {
+      "key": "sonar.working.directory",
+      "value": "C:\\Projects\\aero-vigil\\.sonarqube\\out\\.sonar"
+    },
+    {
+      "key": "sonar.projectBaseDir",
+      "value": "C:\\Projects\\aero-vigil"
+    },
+    {
+      "key": "sonar.pullrequest.cache.basepath",
+      "value": "C:\\Projects\\aero-vigil"
+    },
+    {
+      "key": "sonar.sources",
+      "value": ""
+    },
+    {
+      "key": "sonar.tests",
+      "value": ""
+    },
+    {
+      "key": "sonar.modules",
+      "value": "3DFF9A97-8DDC-4E10-AFDB-540BD4745B3C"
+    },
+    {
+      "key": "3DFF9A97-8DDC-4E10-AFDB-540BD4745B3C.sonar.projectKey",
+      "value": "aero-vigil:3DFF9A97-8DDC-4E10-AFDB-540BD4745B3C"
+    },
+    {
+      "key": "3DFF9A97-8DDC-4E10-AFDB-540BD4745B3C.sonar.projectName",
+      "value": "aero-vigil"
+    },
+    {
+      "key": "3DFF9A97-8DDC-4E10-AFDB-540BD4745B3C.sonar.projectBaseDir",
+      "value": "C:\\Projects\\aero-vigil"
+    },
+    {
+      "key": "3DFF9A97-8DDC-4E10-AFDB-540BD4745B3C.sonar.working.directory",
+      "value": "C:\\Projects\\aero-vigil\\.sonarqube\\out\\.sonar\\mod0"
+    },
+    {
+      "key": "3DFF9A97-8DDC-4E10-AFDB-540BD4745B3C.sonar.sourceEncoding",
+      "value": "utf-8"
+    },
+    {
+      "key": "3DFF9A97-8DDC-4E10-AFDB-540BD4745B3C.sonar.tests",
+      "value": ""
+    },
+    {
+      "key": "3DFF9A97-8DDC-4E10-AFDB-540BD4745B3C.sonar.sources",
+      "value": "C:\\Projects\\aero-vigil\\FlightUtil.cs,C:\\Projects\\aero-vigil\\InvalidFlightException.cs,C:\\Projects\\aero-vigil\\User.cs,C:\\Projects\\aero-vigil\\obj\\aero-vigil.csproj.nuget.dgspec.json,C:\\Projects\\aero-vigil\\obj\\project.assets.json,C:\\Projects\\aero-vigil\\bin\\Debug\\net10.0\\aero-vigil.deps.json,C:\\Projects\\aero-vigil\\bin\\Debug\\net10.0\\aero-vigil.runtimeconfig.json"
+    },
+    {
+      "key": "3DFF9A97-8DDC-4E10-AFDB-540BD4745B3C.sonar.cs.analyzer.projectOutPaths",
+      "value": "C:\\Projects\\aero-vigil\\.sonarqube\\out\\0"
+    },
+    {
+      "key": "3DFF9A97-8DDC-4E10-AFDB-540BD4745B3C.sonar.cs.roslyn.reportFilePaths",
+      "value": "C:\\Projects\\aero-vigil\\.sonarqube\\out\\0\\Issues.json"
+    },
+    {
+      "key": "3DFF9A97-8DDC-4E10-AFDB-540BD4745B3C.sonar.cs.scanner.telemetry",
+      "value": "C:\\Projects\\aero-vigil\\.sonarqube\\out\\0\\Telemetry.json"
+    },
+    {
+      "key": "sonar.login",
+      "value": "***"
+    },
+    {
+      "key": "sonar.host.url",
+      "value": "http://localhost:9000"
+    },
+    {
+      "key": "sonar.visualstudio.enable",
+      "value": "false"
+    }
+  ]
+}

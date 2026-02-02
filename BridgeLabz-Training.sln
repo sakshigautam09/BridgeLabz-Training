@@ -1,0 +1,32 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "collections-csharp-practice", "collections-csharp-practice", "{B74F3C35-59E8-51DC-66E2-E46BE919468F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scenario-codebase", "scenario-codebase", "{50CB9FD6-55A2-0B3C-75C5-6A667BDA7A7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "aero-vigil", "collections-csharp-practice\scenario-codebase\aero-vigil\aero-vigil.csproj", "{E90F8DBB-5AC5-9514-7E6C-6B9B9A905A3F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E90F8DBB-5AC5-9514-7E6C-6B9B9A905A3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E90F8DBB-5AC5-9514-7E6C-6B9B9A905A3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E90F8DBB-5AC5-9514-7E6C-6B9B9A905A3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E90F8DBB-5AC5-9514-7E6C-6B9B9A905A3F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{50CB9FD6-55A2-0B3C-75C5-6A667BDA7A7F} = {B74F3C35-59E8-51DC-66E2-E46BE919468F}
+		{E90F8DBB-5AC5-9514-7E6C-6B9B9A905A3F} = {50CB9FD6-55A2-0B3C-75C5-6A667BDA7A7F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0D848CBC-25D4-4817-A040-60124A3CD705}
+	EndGlobalSection
+EndGlobal
