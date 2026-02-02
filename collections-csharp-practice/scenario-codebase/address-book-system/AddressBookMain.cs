@@ -8,12 +8,24 @@ public class AddressBookMain
 
         while (true)
         {
-            Console.WriteLine("\n1. Create Address Book");
+            Console.WriteLine("\n---- MAIN MENU ----");
+            Console.WriteLine("1. Create Address Book");
             Console.WriteLine("2. Select Address Book");
-            Console.WriteLine("3. Open Address Book");
+            Console.WriteLine("3. Open Selected Address Book Menu");
             Console.WriteLine("0. Exit");
 
-            int choice = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter your choice: ");
+            int choice;
+
+            try
+            {
+                choice = Convert.ToInt32(Console.ReadLine());
+            }
+            catch
+            {
+                Console.WriteLine("Invalid input. Enter a number.");
+                continue;
+            }
 
             switch (choice)
             {
@@ -23,9 +35,10 @@ public class AddressBookMain
                     if (AddressBookUtilityImpl.selectedBook != null)
                         new AddressMenu(AddressBookUtilityImpl.selectedBook).ShowMenu();
                     else
-                        Console.WriteLine("Select a book first.");
+                        Console.WriteLine("Please create or select an address book first.");
                     break;
                 case 0: return;
+                default: Console.WriteLine("Invalid choice. Try again."); break;
             }
         }
     }

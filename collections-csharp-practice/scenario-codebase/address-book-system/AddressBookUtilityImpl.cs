@@ -3,10 +3,7 @@ using System.Collections.Generic;
 
 public class AddressBookUtilityImpl : IAddressBook
 {
-    // ---------- GENERIC LISTS ----------
-    private List<Contact> contacts; // replaces ArrayList
-
-    // Multiple address books
+    private List<Contact> contacts;
     private static List<AddressBookUtilityImpl> addressBooks = new List<AddressBookUtilityImpl>();
     private static List<string> bookNames = new List<string>();
 
@@ -17,7 +14,6 @@ public class AddressBookUtilityImpl : IAddressBook
         contacts = new List<Contact>();
     }
 
-    // ---------- SEARCH ----------
     private int FindContactIndex(string firstName, string lastName)
     {
         for (int i = 0; i < contacts.Count; i++)
@@ -32,87 +28,121 @@ public class AddressBookUtilityImpl : IAddressBook
         return -1;
     }
 
-    // ---------- ADD ----------
     public void AddContact()
     {
-        Console.Write("First Name: ");
-        string fn = Console.ReadLine();
-        Console.Write("Last Name: ");
-        string ln = Console.ReadLine();
-
-        if (FindContactIndex(fn, ln) != -1)
+        try
         {
-            Console.WriteLine("Duplicate contact found.");
-            return;
+            Console.Write("First Name: "); string fn = Console.ReadLine();
+            Console.Write("Last Name: "); string ln = Console.ReadLine();
+
+            if (FindContactIndex(fn, ln) != -1)
+                throw new AddressBookException("Duplicate contact found.");
+
+            Console.Write("Address: "); string addr = Console.ReadLine();
+            Console.Write("City: "); string city = Console.ReadLine();
+            Console.Write("State: "); string state = Console.ReadLine();
+            Console.Write("Zip: "); string zip = Console.ReadLine();
+            Console.Write("Phone: "); string phone = Console.ReadLine();
+            Console.Write("Email: "); string email = Console.ReadLine();
+
+            contacts.Add(new Contact(fn, ln, addr, city, state, zip, phone, email));
+            Console.WriteLine("Contact added.");
         }
-
-        Console.Write("Address: "); string addr = Console.ReadLine();
-        Console.Write("City: "); string city = Console.ReadLine();
-        Console.Write("State: "); string state = Console.ReadLine();
-        Console.Write("Zip: "); string zip = Console.ReadLine();
-        Console.Write("Phone: "); string phone = Console.ReadLine();
-        Console.Write("Email: "); string email = Console.ReadLine();
-
-        contacts.Add(new Contact(fn, ln, addr, city, state, zip, phone, email));
-        Console.WriteLine("Contact added.");
+        catch (AddressBookException ex)
+        {
+            Console.WriteLine("Error: " + ex.Message);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Unexpected error: " + ex.Message);
+        }
     }
 
     public void AddMultipleContacts()
     {
-        Console.Write("How many contacts? ");
-        int n = Convert.ToInt32(Console.ReadLine());
-        for (int i = 0; i < n; i++)
-            AddContact();
+        try
+        {
+            Console.Write("How many contacts? ");
+            int n = Convert.ToInt32(Console.ReadLine());
+            if (n <= 0) throw new AddressBookException("Number of contacts must be greater than 0.");
+
+            for (int i = 0; i < n; i++)
+                AddContact();
+        }
+        catch (AddressBookException ex)
+        {
+            Console.WriteLine("Error: " + ex.Message);
+        }
+        catch (FormatException)
+        {
+            Console.WriteLine("Invalid number entered.");
+        }
     }
 
-    // ---------- DISPLAY ----------
     public void DisplayContacts()
     {
-        foreach (Contact c in contacts)
+        try
         {
-            Console.WriteLine(c);
-            Console.WriteLine("------------------");
+            if (contacts.Count == 0) throw new AddressBookException("No contacts available.");
+
+            foreach (Contact c in contacts)
+            {
+                Console.WriteLine(c);
+                Console.WriteLine("------------------");
+            }
+        }
+        catch (AddressBookException ex)
+        {
+            Console.WriteLine("Error: " + ex.Message);
         }
     }
 
-    // ---------- EDIT ----------
     public void EditContact()
     {
-        Console.Write("Enter First Name: ");
-        string name = Console.ReadLine();
-
-        foreach (Contact c in contacts)
+        try
         {
-            if (c.GetFirstName().Equals(name, StringComparison.OrdinalIgnoreCase))
+            Console.Write("Enter First Name to edit: ");
+            string name = Console.ReadLine();
+            bool found = false;
+
+            foreach (Contact c in contacts)
             {
-                Console.Write("New Phone: "); c.SetPhoneNumber(Console.ReadLine());
-                Console.Write("New Email: "); c.SetEmail(Console.ReadLine());
-                Console.WriteLine("Updated.");
-                return;
+                if (c.GetFirstName().Equals(name, StringComparison.OrdinalIgnoreCase))
+                {
+                    Console.Write("New Phone: "); c.SetPhoneNumber(Console.ReadLine());
+                    Console.Write("New Email: "); c.SetEmail(Console.ReadLine());
+                    Console.WriteLine("Updated.");
+                    found = true;
+                    break;
+                }
             }
+
+            if (!found) throw new AddressBookException("Contact not found.");
         }
-        Console.WriteLine("Contact not found.");
+        catch (AddressBookException ex)
+        {
+            Console.WriteLine("Error: " + ex.Message);
+        }
     }
 
-    // ---------- DELETE ----------
     public void DeleteContact()
     {
-        Console.Write("Enter First Name: ");
-        string name = Console.ReadLine();
-
-        for (int i = 0; i < contacts.Count; i++)
+        try
         {
-            if (contacts[i].GetFirstName().Equals(name, StringComparison.OrdinalIgnoreCase))
-            {
-                contacts.RemoveAt(i);
-                Console.WriteLine("Deleted.");
-                return;
-            }
+            Console.Write("Enter First Name to delete: ");
+            string name = Console.ReadLine();
+            int index = FindContactIndex(name, ""); // search only by first name
+
+            if (index == -1) throw new AddressBookException("Contact not found.");
+            contacts.RemoveAt(index);
+            Console.WriteLine("Deleted.");
         }
-        Console.WriteLine("Contact not found.");
+        catch (AddressBookException ex)
+        {
+            Console.WriteLine("Error: " + ex.Message);
+        }
     }
 
-    // ---------- SORT ----------
     private void BubbleSort(Func<Contact, string> key)
     {
         for (int i = 0; i < contacts.Count - 1; i++)
@@ -134,37 +164,42 @@ public class AddressBookUtilityImpl : IAddressBook
     public void SortContactsByState() { BubbleSort(c => c.GetState()); DisplayContacts(); }
     public void SortContactsByZip() { BubbleSort(c => c.GetZip()); DisplayContacts(); }
 
-    // ---------- MULTIPLE BOOKS ----------
     public static void CreateAddressBook()
     {
-        Console.Write("Enter Address Book Name: ");
-        string name = Console.ReadLine();
-        if (bookNames.Contains(name))
+        try
         {
-            Console.WriteLine("Already exists.");
-            return;
-        }
+            Console.Write("Enter Address Book Name: ");
+            string name = Console.ReadLine();
+            if (bookNames.Contains(name))
+                throw new AddressBookException("Address Book already exists.");
 
-        AddressBookUtilityImpl book = new AddressBookUtilityImpl();
-        addressBooks.Add(book);
-        bookNames.Add(name);
-        selectedBook = book;
-        Console.WriteLine("Created.");
+            AddressBookUtilityImpl book = new AddressBookUtilityImpl();
+            addressBooks.Add(book);
+            bookNames.Add(name);
+            selectedBook = book;
+            Console.WriteLine("Created.");
+        }
+        catch (AddressBookException ex)
+        {
+            Console.WriteLine("Error: " + ex.Message);
+        }
     }
 
     public static void SelectAddressBook()
     {
-        Console.Write("Enter Address Book Name: ");
-        string name = Console.ReadLine();
-        for (int i = 0; i < bookNames.Count; i++)
+        try
         {
-            if (bookNames[i].Equals(name, StringComparison.OrdinalIgnoreCase))
-            {
-                selectedBook = addressBooks[i];
-                Console.WriteLine("Selected.");
-                return;
-            }
+            Console.Write("Enter Address Book Name: ");
+            string name = Console.ReadLine();
+            int index = bookNames.FindIndex(b => b.Equals(name, StringComparison.OrdinalIgnoreCase));
+            if (index == -1) throw new AddressBookException("Address Book not found.");
+
+            selectedBook = addressBooks[index];
+            Console.WriteLine("Selected.");
         }
-        Console.WriteLine("Not found.");
+        catch (AddressBookException ex)
+        {
+            Console.WriteLine("Error: " + ex.Message);
+        }
     }
 }
