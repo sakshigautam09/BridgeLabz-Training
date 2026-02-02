@@ -299,3 +299,49 @@
     * Implemented validation rules for shipments
     * Built reusable business-logic methods
     * Reinforced real-world problem solving using C#
+
+<!-- ------------------------------------------------------- -->
+## Day — February 2, 2026
+## Topic: Code Quality Analysis & String Transformation Logic
+
+## Morning Session: Applied SonarQube on Aero Vigil
+## Scenarios Implemented
+    * Integrated SonarQube with the Aero Vigil project
+    * Performed static code analysis
+    * Identified code smells, bugs, and security hotspots
+    * Analyzed duplication and complexity issues
+    * Reviewed maintainability and reliability ratings
+
+## Key Concepts Applied
+    * Static code analysis fundamentals
+    * Clean Code principles
+    * Code quality metrics (bugs, vulnerabilities, code smells)
+    * Refactoring based on SonarQube feedback
+    * Improving readability and maintainability
+
+## Tasks Completed
+    * Improved overall code quality of Aero Vigil
+    * Reduced code smells through refactoring
+    * Gained hands-on experience with SonarQube reports
+    * Strengthened understanding of enterprise-level quality checks
+
+## Afternoon Session: Flip Key
+## Scenarios Implemented
+    * Input validation based on strict business rules
+    * ASCII-based character filtering
+    * Case transformation logic
+    * String reversal and positional manipulation
+    * Error handling using return-based validation
+
+## Key Concepts Applied
+    * ASCII value analysis
+    * String manipulation techniques
+    * Conditional logic and loops
+    * Method-based business logic implementation
+    * Defensive programming practices
+
+## Tasks Completed
+    * Implemented Flip Key transformation logic
+    * Practiced real-world string processing scenarios
+    * Strengthened problem-solving using character-level logic
+    * Improved attention to edge cases and validations
