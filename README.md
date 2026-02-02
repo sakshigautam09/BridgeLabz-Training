@@ -342,3 +342,28 @@
     * Verified stability and correctness
     * Analyzed complexity and scenario outcomes
 
+<!-- -------------------------------------------------- -->
+## Day — February 2, 2026
+## Topic: Applied DSA Concepts — Address Book System
+
+## Address Book Management
+## Scenario: Built an Address Book system using basic DSA concepts to store, search, sort, and manage contacts.
+
+## Tasks Implemented:
+    * Stored contacts in arrays and tracked count.
+    * Added, edited, and deleted contacts.
+    * Searched contacts using linear search.
+    * Sorted contacts by name, city, state, and zip using bubble sort.
+    * Supported multiple address books with unique names and selection.
+
+## Key Concepts Applied:
+    * Arrays for storage
+    * Linear search for lookup
+    * Array shift for deletion
+    * Bubble sort for sorting
+    * Multi-book handling
+
+## Completed Tasks:
+    * Fully functional Address Book with add, edit, delete, search, sort.
+    * Multiple address books supported.
+    * Verified correctness and stability.
