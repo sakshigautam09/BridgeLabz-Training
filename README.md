@@ -345,3 +345,49 @@
     * Practiced real-world string processing scenarios
     * Strengthened problem-solving using character-level logic
     * Improved attention to edge cases and validations
+
+<!-- --------------------------------------------------------- -->
+## Day — February 3, 2026
+## Topic: Factory Robot Hazard Analyzer & Address Book Enhancements
+
+## Morning Session: Factory Robot Hazard Analyzer
+## Scenarios Implemented
+    * Developed a hazard analysis system for factory robots
+    * Evaluated robot hazard risk based on arm precision, worker density, and machinery state
+    * Implemented input validation for all parameters
+    * Applied custom exception handling for invalid inputs
+    * Calculated hazard risk score using a weighted formula
+    * Displayed risk score or error messages depending on nput validity
+
+## Key Concepts Applied
+    * Conditional logic for input validation
+    * Custom exception creation and handling (RobotSafetyException)
+    * Formula-based risk computation
+    * Defensive programming practices
+    * Ensured robustness against invalid or out-of-range inputs
+
+## Tasks Completed
+    * Built a reliable hazard risk calculation module
+    * Validated all inputs and enforced constraints strictly
+    * Handled error scenarios gracefully using custom exceptions
+    * Strengthened understanding of safety-critical programming logic
+
+## Afternoon Session: Address Book — Annotations & Reflection
+## Scenarios Implemented
+    * Added custom attributes to domain classes (Contact) and interface (IAddressBook)
+    * Created a Reflection Inspector to read class metadata, constructors, methods, fields, and annotations at runtime
+    * Displayed reflection output at program startup without modifying business logic
+    * Verified that all CRUD operations, sorting, and menu interactions remain fully functional
+
+## Key Concepts Applied
+    * C# Attributes for metadata annotation
+    * Reflection API: Type, GetFields, GetMethods, GetConstructors, GetCustomAttributes
+    * Separation of concerns: reflection logic outside core business logic
+    * Runtime inspection of private fields and method signatures
+    * Maintaining clean code architecture while adding meta-programming
+
+## Tasks Completed
+    * Successfully annotated domain and interface classes
+    * Built reusable reflection utility for class inspection
+    * Verified that existing Address Book functionalities remain intact
+    * Gained practical experience with annotations and reflection in enterprise C# applications
