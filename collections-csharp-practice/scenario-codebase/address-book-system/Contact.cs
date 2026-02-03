@@ -1,5 +1,6 @@
 using System;
-// UC-1 (encapsulated class creation)
+
+[AddressBookMetadata("Domain Model", "AddressBook Team", "1.0")]
 public class Contact
 {
     private string firstName;
@@ -11,7 +12,7 @@ public class Contact
     private string phoneNumber;
     private string email;
 
-    public Contact(string firstName, string lastName, string address, string city, string state, string zip, 
+    public Contact(string firstName, string lastName, string address, string city, string state, string zip,
         string phoneNumber, string email)
     {
         this.firstName = firstName;
@@ -23,7 +24,7 @@ public class Contact
         this.phoneNumber = phoneNumber;
         this.email = email;
     }
-    // Getters
+
     public string GetFirstName() { return firstName; }
     public string GetLastName() { return lastName; }
     public string GetAddress() { return address; }
@@ -33,7 +34,6 @@ public class Contact
     public string GetPhoneNumber() { return phoneNumber; }
     public string GetEmail() { return email; }
 
-    // Setters
     public void SetFirstName(string value) { firstName = value; }
     public void SetLastName(string value) { lastName = value; }
     public void SetAddress(string value) { address = value; }
@@ -43,7 +43,6 @@ public class Contact
     public void SetPhoneNumber(string value) { phoneNumber = value; }
     public void SetEmail(string value) { email = value; }
 
-    // 🔹 UC-11: Override ToString()
     public override string ToString()
     {
         return "Name: " + firstName + " " + lastName +

@@ -1,12 +1,14 @@
+using System;
+
+[AddressBookMetadata("Contract Interface", "AddressBook Team", "1.0")]
 public interface IAddressBook
 {
-    void AddContact();               // Add single contact
-    void AddMultipleContacts();      // Add multiple contacts
-    void DisplayContacts();          // Display all contacts
-    void EditContact();              // Edit a contact
-    void DeleteContact();            // Delete a contact
+    void AddContact();
+    void AddMultipleContacts();
+    void DisplayContacts();
+    void EditContact();
+    void DeleteContact();
 
-    // Sorting methods
     void SortContactsByName();
     void SortContactsByCity();
     void SortContactsByState();

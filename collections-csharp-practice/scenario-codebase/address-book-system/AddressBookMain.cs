@@ -4,6 +4,10 @@ public class AddressBookMain
 {
     static void Main()
     {
+        // 🔹 Reflection demo (no effect on logic)
+        ReflectionInspector.InspectType(typeof(Contact));
+        ReflectionInspector.InspectType(typeof(IAddressBook));
+
         Console.WriteLine("Welcome to Address Book Program");
 
         while (true)
