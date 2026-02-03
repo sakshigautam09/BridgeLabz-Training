@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("aero-vigil")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+03b269b3a33ee384bd1329a641920db87641e554")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7bf9708696cbc4838e70cd431fb4784421765e15")]
 [assembly: System.Reflection.AssemblyProductAttribute("aero-vigil")]
 [assembly: System.Reflection.AssemblyTitleAttribute("aero-vigil")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
