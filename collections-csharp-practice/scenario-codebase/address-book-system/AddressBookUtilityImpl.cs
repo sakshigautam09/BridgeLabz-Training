@@ -1,9 +1,12 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Text.Json;    
+using System.Text.Json.Serialization;
 
 public class AddressBookUtilityImpl : IAddressBook
 {
-    private List<Contact> contacts;
+    internal List<Contact> contacts;
     private static List<AddressBookUtilityImpl> addressBooks = new List<AddressBookUtilityImpl>();
     private static List<string> bookNames = new List<string>();
 
@@ -28,6 +31,7 @@ public class AddressBookUtilityImpl : IAddressBook
         return -1;
     }
 
+    // ------------------- CRUD -------------------
     public void AddContact()
     {
         try
@@ -57,7 +61,6 @@ public class AddressBookUtilityImpl : IAddressBook
             Console.WriteLine("Unexpected error: " + ex.Message);
         }
     }
-
     public void AddMultipleContacts()
     {
         try
@@ -78,7 +81,6 @@ public class AddressBookUtilityImpl : IAddressBook
             Console.WriteLine("Invalid number entered.");
         }
     }
-
     public void DisplayContacts()
     {
         try
@@ -96,7 +98,6 @@ public class AddressBookUtilityImpl : IAddressBook
             Console.WriteLine("Error: " + ex.Message);
         }
     }
-
     public void EditContact()
     {
         try
@@ -124,14 +125,13 @@ public class AddressBookUtilityImpl : IAddressBook
             Console.WriteLine("Error: " + ex.Message);
         }
     }
-
     public void DeleteContact()
     {
         try
         {
             Console.Write("Enter First Name to delete: ");
             string name = Console.ReadLine();
-            int index = FindContactIndex(name, ""); // search only by first name
+            int index = FindContactIndex(name, "");
 
             if (index == -1) throw new AddressBookException("Contact not found.");
             contacts.RemoveAt(index);
@@ -143,6 +143,7 @@ public class AddressBookUtilityImpl : IAddressBook
         }
     }
 
+    // ------------------- SORTING -------------------
     private void BubbleSort(Func<Contact, string> key)
     {
         for (int i = 0; i < contacts.Count - 1; i++)
@@ -158,12 +159,12 @@ public class AddressBookUtilityImpl : IAddressBook
             }
         }
     }
-
     public void SortContactsByName() { BubbleSort(c => c.GetFirstName()); DisplayContacts(); }
     public void SortContactsByCity() { BubbleSort(c => c.GetCity()); DisplayContacts(); }
     public void SortContactsByState() { BubbleSort(c => c.GetState()); DisplayContacts(); }
     public void SortContactsByZip() { BubbleSort(c => c.GetZip()); DisplayContacts(); }
 
+    // ------------------- ADDRESS BOOK MANAGEMENT -------------------
     public static void CreateAddressBook()
     {
         try
@@ -184,7 +185,6 @@ public class AddressBookUtilityImpl : IAddressBook
             Console.WriteLine("Error: " + ex.Message);
         }
     }
-
     public static void SelectAddressBook()
     {
         try
@@ -202,4 +202,229 @@ public class AddressBookUtilityImpl : IAddressBook
             Console.WriteLine("Error: " + ex.Message);
         }
     }
+
+    // ------------------- SEARCH/VIEW/COUNT -------------------
+    public void ViewPersonsByCityOrState()
+    {
+        Console.Write("Enter City or State to view persons: ");
+        string location = Console.ReadLine();
+        var filtered = contacts.FindAll(c => c.GetCity().Equals(location, StringComparison.OrdinalIgnoreCase) ||
+                                             c.GetState().Equals(location, StringComparison.OrdinalIgnoreCase));
+        if (filtered.Count == 0)
+            Console.WriteLine("No persons found for " + location);
+        else
+        {
+            foreach (var c in filtered)
+            {
+                Console.WriteLine(c);
+                Console.WriteLine("------------------");
+            }
+        }
+    }
+
+    public void CountPersonsByCityOrState()
+    {
+        Console.Write("Enter City or State to count persons: ");
+        string location = Console.ReadLine();
+        int count = contacts.FindAll(c => c.GetCity().Equals(location, StringComparison.OrdinalIgnoreCase) ||
+                                          c.GetState().Equals(location, StringComparison.OrdinalIgnoreCase)).Count;
+        Console.WriteLine("Number of persons in " + location + ": " + count);
+    }
+
+    public static void SearchPersonAcrossAddressBooks()
+    {
+        Console.Write("Enter City or State to search across all Address Books: ");
+        string location = Console.ReadLine();
+        int totalCount = 0;
+
+        for (int i = 0; i < addressBooks.Count; i++)
+        {
+            var filtered = addressBooks[i].contacts.FindAll(c => c.GetCity().Equals(location, StringComparison.OrdinalIgnoreCase) ||
+                                                                 c.GetState().Equals(location, StringComparison.OrdinalIgnoreCase));
+            totalCount += filtered.Count;
+            if (filtered.Count > 0)
+            {
+                Console.WriteLine("\nAddress Book: " + i);
+                foreach (var c in filtered)
+                {
+                    Console.WriteLine(c);
+                    Console.WriteLine("------------------");
+                }
+            }
+        }
+
+        Console.WriteLine("Total persons found across all address books in " + location + ": " + totalCount);
+    }
+
+    // ------------------- UC-13 FILE IO -------------------
+    public void WriteContactsToFile()
+    {
+        try
+        {
+            Console.Write("Enter file path to save contacts: ");
+            string path = Console.ReadLine();
+
+            using (StreamWriter writer = new StreamWriter(path))
+            {
+                foreach (var c in contacts)
+                {
+                    writer.WriteLine($"{c.GetFirstName()}|{c.GetLastName()}|{c.GetAddress()}|{c.GetCity()}|{c.GetState()}|{c.GetZip()}|{c.GetPhoneNumber()}|{c.GetEmail()}");
+                }
+            }
+
+            Console.WriteLine("Contacts successfully written to file.");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Error writing to file: " + ex.Message);
+        }
+    }
+
+    public void ReadContactsFromFile()
+    {
+        try
+        {
+            Console.Write("Enter file path to read contacts: ");
+            string path = Console.ReadLine();
+
+            if (!File.Exists(path))
+            {
+                Console.WriteLine("File does not exist.");
+                return;
+            }
+
+            using (StreamReader reader = new StreamReader(path))
+            {
+                string line;
+                contacts.Clear();
+                while ((line = reader.ReadLine()) != null)
+                {
+                    string[] data = line.Split('|');
+                    if (data.Length == 8)
+                    {
+                        contacts.Add(new Contact(data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7]));
+                    }
+                }
+            }
+
+            Console.WriteLine("Contacts successfully read from file.");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Error reading from file: " + ex.Message);
+        }
+    }
+    // ------------------- UC-14: CSV FILE IO -------------------
+    public void WriteContactsToCsv()
+    {
+        try
+        {
+            Console.Write("Enter CSV file path to save contacts: ");
+            string path = Console.ReadLine();
+
+            using (StreamWriter writer = new StreamWriter(path))
+            {
+                // Write CSV header
+                writer.WriteLine("FirstName,LastName,Address,City,State,Zip,Phone,Email");
+
+                foreach (var c in contacts)
+                {
+                    writer.WriteLine($"{c.GetFirstName()},{c.GetLastName()},{c.GetAddress()},{c.GetCity()},{c.GetState()},{c.GetZip()},{c.GetPhoneNumber()},{c.GetEmail()}");
+                }
+            }
+
+            Console.WriteLine("Contacts successfully written to CSV file.");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Error writing CSV: " + ex.Message);
+        }
+    }
+
+    public void ReadContactsFromCsv()
+    {
+        try
+        {
+            Console.Write("Enter CSV file path to read contacts: ");
+            string path = Console.ReadLine();
+
+            if (!File.Exists(path))
+            {
+                Console.WriteLine("CSV file does not exist.");
+                return;
+            }
+
+            using (StreamReader reader = new StreamReader(path))
+            {
+                string line;
+                contacts.Clear();
+
+                // Skip CSV header
+                reader.ReadLine();
+
+                while ((line = reader.ReadLine()) != null)
+                {
+                    string[] data = line.Split(',');
+                    if (data.Length == 8)
+                    {
+                        contacts.Add(new Contact(data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7]));
+                    }
+                }
+            }
+
+            Console.WriteLine("Contacts successfully read from CSV file.");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Error reading CSV: " + ex.Message);
+        }
+    }
+// ------------------- UC-15: JSON FILE IO -------------------
+    public void WriteContactsToJson()
+    {
+        try
+        {
+            Console.Write("Enter JSON file path to save contacts: ");
+            string path = Console.ReadLine();
+
+            // Serialize contacts list to JSON
+            string json = JsonSerializer.Serialize(contacts, new JsonSerializerOptions { WriteIndented = true });
+
+            File.WriteAllText(path, json);
+
+            Console.WriteLine("Contacts successfully written to JSON file.");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Error writing JSON: " + ex.Message);
+        }
+    }
+
+    public void ReadContactsFromJson()
+    {
+        try
+        {
+            Console.Write("Enter JSON file path to read contacts: ");
+            string path = Console.ReadLine();
+
+            if (!File.Exists(path))
+            {
+                Console.WriteLine("JSON file does not exist.");
+                return;
+            }
+
+            string json = File.ReadAllText(path);
+
+            // Deserialize JSON to contacts list
+            contacts = JsonSerializer.Deserialize<List<Contact>>(json);
+
+            Console.WriteLine("Contacts successfully read from JSON file.");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Error reading JSON: " + ex.Message);
+        }
+    }
+
 }
+
