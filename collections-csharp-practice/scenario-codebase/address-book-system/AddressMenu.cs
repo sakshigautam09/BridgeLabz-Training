@@ -29,6 +29,7 @@ public class AddressMenu
             Console.WriteLine("13. Read or Write Contacts to File");
             Console.WriteLine("14. Read/Write Contacts as CSV File");
             Console.WriteLine("15. Read/Write Contacts as JSON File");
+            Console.WriteLine("16. Read/Write Contacts from/to JSON Server");
 
             Console.WriteLine("0. Exit Address Book");
 
@@ -87,6 +88,21 @@ public class AddressMenu
                         addressBook.WriteContactsToJson();
                     else if (jsonChoice == 2)
                         addressBook.ReadContactsFromJson();
+                    else
+                        Console.WriteLine("Invalid choice");
+                    break;
+                case 16:
+                    Console.WriteLine("Enter JSON server URL: ");
+                    string url = Console.ReadLine();
+                    Console.WriteLine("1. Write Contacts to Server");
+                    Console.WriteLine("2. Read Contacts from Server");
+                    Console.Write("Enter choice: ");
+                    int serverChoice = Convert.ToInt32(Console.ReadLine());
+
+                    if (serverChoice == 1)
+                        await addressBook.WriteContactsToJsonServerAsync(url);
+                    else if (serverChoice == 2)
+                        await addressBook.ReadContactsFromJsonServerAsync(url);
                     else
                         Console.WriteLine("Invalid choice");
                     break;

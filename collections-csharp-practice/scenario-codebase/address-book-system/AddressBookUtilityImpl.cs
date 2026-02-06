@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;    
 using System.Text.Json.Serialization;
+using System.Net.Http;       
+using System.Net.Http.Json;     
+using System.Threading.Tasks;
 
 public class AddressBookUtilityImpl : IAddressBook
 {
@@ -423,6 +426,54 @@ public class AddressBookUtilityImpl : IAddressBook
         catch (Exception ex)
         {
             Console.WriteLine("Error reading JSON: " + ex.Message);
+        }
+    }
+
+// ------------------- UC-16: JSON SERVER -------------------
+    public async Task WriteContactsToJsonServerAsync(string serverUrl)
+    {
+        try
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                // Send contacts as JSON to server
+                HttpResponseMessage response = await client.PostAsJsonAsync(serverUrl, contacts);
+
+                if (response.IsSuccessStatusCode)
+                    Console.WriteLine("Contacts successfully sent to JSON server.");
+                else
+                    Console.WriteLine("Failed to send contacts. Status: " + response.StatusCode);
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Error sending to server: " + ex.Message);
+        }
+    }
+
+    public async Task ReadContactsFromJsonServerAsync(string serverUrl)
+    {
+        try
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                // Get contacts from server as JSON
+                var serverContacts = await client.GetFromJsonAsync<List<Contact>>(serverUrl);
+
+                if (serverContacts != null)
+                {
+                    contacts = serverContacts;
+                    Console.WriteLine("Contacts successfully fetched from JSON server.");
+                }
+                else
+                {
+                    Console.WriteLine("No contacts received from server.");
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Error reading from server: " + ex.Message);
         }
     }
 
