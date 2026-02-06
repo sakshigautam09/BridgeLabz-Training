@@ -90,3 +90,52 @@
     * Reinforced clean and maintainable JSON code
 
 <!-- -------------------------------------------------------------- -->
+## Day — February 4, 2026
+## Topic: Address Book — File I/O & CSV Integration
+
+## Scenarios Implemented
+    * Added ability to read Address Book data from local files using File I/O
+    * Implemented writing of person contact details into CSV format
+    * Enabled loading existing contacts from CSV into application memory
+    * Ensured structured storage of contact fields (Name, Phone, Email, Address, etc.)
+    * Maintained compatibility with existing CRUD operations and menu workflow
+
+## Key Concepts Applied
+    * File I/O operations in C# (StreamReader, StreamWriter)
+    * CSV data handling and formatting
+    * Parsing and serialization of contact data
+    * Data persistence using external files
+    * Exception handling for file access and format errors
+
+## Tasks Completed
+    * Implemented CSV-based storage for Address Book contacts
+    * Enabled reading contacts from file at runtime
+    * Ensured data consistency between in-memory objects and CSV records
+    * Preserved existing Address Book features without breaking functionality
+    * Strengthened understanding of file handling and data persistence in C# applications
+
+<!-- ------------------------------------------------ -->
+## Day — February 5, 2026
+## Topic: Address Book — JSON File & JSON Server Integration
+
+## Scenarios Implemented
+    * Added ability to read Address Book data from JSON files
+    * Implemented writing of person contact details into structured JSON format
+    * Enabled loading and saving contacts using local JSON storage
+    * Integrated JSON Server to simulate backend API for storing and retrieving contacts
+    * Ensured synchronization between application data and JSON server records
+
+## Key Concepts Applied
+    * JSON serialization and deserialization in C#
+    * Working with external libraries for JSON handling
+    * RESTful interaction with JSON Server
+    * Data persistence using JSON-based storage
+    * Error handling for file access, parsing, and server communication
+
+## Tasks Completed
+    * Implemented read/write operations for contacts using JSON files
+    * Connected Address Book application with JSON Server for data storage
+    * Ensured existing CRUD operations work seamlessly with JSON data
+    * Maintained application stability without affecting current features
+    * Gained practical experience with JSON handling and server-based data interaction in C# applications
+
