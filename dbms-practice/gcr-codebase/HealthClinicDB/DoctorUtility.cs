@@ -45,6 +45,7 @@ public class DoctorUtility : IDoctorService
                 cmd.Parameters.AddWithValue("@contact", contact);
                 cmd.Parameters.AddWithValue("@fee", fee);
                 cmd.Parameters.AddWithValue("@specialist", specialistId);
+                cmd.Parameters.AddWithValue("@is_active", true); // REQUIRED
 
                 int rows = cmd.ExecuteNonQuery();
                 Console.WriteLine(rows + " doctor(s) updated.");
@@ -143,7 +144,8 @@ public class DoctorUtility : IDoctorService
         }
     }
 
-    public void GetDoctorsBySpecialty(string specialtyName)
+
+    public void GetDoctorsBySpecialty(int specialtyId)
     {
         try
         {
@@ -152,7 +154,7 @@ public class DoctorUtility : IDoctorService
                 SqlCommand cmd = new SqlCommand("sp_get_doctors_by_specialty", con);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@specialty_name", specialtyName);
+                cmd.Parameters.AddWithValue("@specialty_id", specialtyId);
 
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
@@ -176,6 +178,7 @@ public class DoctorUtility : IDoctorService
             throw new ClinicException("Unexpected error while retrieving doctors by specialty: " + ex.Message);
         }
     }
+
 
     public void DeactivateDoctor(int id)
     {

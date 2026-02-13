@@ -38,27 +38,30 @@ public class AppointmentUtility : IAppointmentService
         }
     }
 
-
     public void CheckDoctorAvailability(int doctorId, DateTime appointmentDate)
     {
         try
         {
             using (SqlConnection con = DBConnection.GetConnection())
             {
-                SqlCommand cmd = new SqlCommand("sp_check_doctor_availability", con);
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-
-                cmd.Parameters.AddWithValue("@doctor_id", doctorId);
-                cmd.Parameters.AddWithValue("@appointment_date", appointmentDate);
-
-                using (SqlDataReader reader = cmd.ExecuteReader())
+                using (SqlCommand cmd = new SqlCommand("sp_check_doctor_availability", con))
                 {
-                    Console.WriteLine("Time Slot | Booked Count");
-                    Console.WriteLine("-------------------------");
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-                    while (reader.Read())
+                    cmd.Parameters.AddWithValue("@doctor_id", doctorId);
+                    cmd.Parameters.AddWithValue("@appointment_date", appointmentDate);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        Console.WriteLine($"{reader["appointment_time"]} | {reader["booking_count"]}");
+                        Console.WriteLine("\nTime Slot | Booked Count");
+                        Console.WriteLine("--------------------------");
+
+                        while (reader.Read())
+                        {
+                            Console.WriteLine(
+                                $"{reader["appointment_time"]} | {reader["booked_slots"]}"
+                            );
+                        }
                     }
                 }
             }
@@ -69,7 +72,7 @@ public class AppointmentUtility : IAppointmentService
         }
         catch (Exception ex)
         {
-            throw new ClinicException("Unexpected error while checking doctor availability: " + ex.Message);
+            throw new ClinicException("Unexpected error: " + ex.Message);
         }
     }
 
@@ -104,13 +107,15 @@ public class AppointmentUtility : IAppointmentService
         {
             using (SqlConnection con = DBConnection.GetConnection())
             {
-                SqlCommand cmd = new SqlCommand("sp_reschedule_appointment", con);
+                SqlCommand cmd = new SqlCommand("dbo.sp_reschedule_appointment", con);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                TimeSpan time = TimeSpan.Parse(newTime);
 
                 cmd.Parameters.AddWithValue("@appointment_id", appointmentId);
                 cmd.Parameters.AddWithValue("@doctor_id", doctorId);
                 cmd.Parameters.AddWithValue("@new_date", newDate);
-                cmd.Parameters.AddWithValue("@new_time", newTime);
+                cmd.Parameters.AddWithValue("@new_time", time);
 
                 int rows = cmd.ExecuteNonQuery();
                 Console.WriteLine(rows + " appointment(s) rescheduled.");
@@ -120,11 +125,16 @@ public class AppointmentUtility : IAppointmentService
         {
             throw new ClinicException("Database error while rescheduling appointment: " + ex.Message);
         }
+        catch (FormatException)
+        {
+            throw new ClinicException("Invalid time format. Use HH:mm (example: 16:00).");
+        }
         catch (Exception ex)
         {
             throw new ClinicException("Unexpected error while rescheduling appointment: " + ex.Message);
         }
     }
+
 
     public void ViewDailyAppointments(DateTime date)
     {
@@ -132,21 +142,21 @@ public class AppointmentUtility : IAppointmentService
         {
             using (SqlConnection con = DBConnection.GetConnection())
             {
-                SqlCommand cmd = new SqlCommand("sp_view_daily_appointments", con);
+                SqlCommand cmd = new SqlCommand("dbo.sp_view_daily_appointments", con);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@date", date);
+                cmd.Parameters.AddWithValue("@appointment_date", date);
 
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
-                    Console.WriteLine("AppointmentID | PatientName | DoctorName | Date | Time | Status");
-                    Console.WriteLine("---------------------------------------------------------------");
+                    Console.WriteLine("AppointmentID | PatientName | DoctorName | Time | Status");
+                    Console.WriteLine("----------------------------------------------------------");
 
                     while (reader.Read())
                     {
                         Console.WriteLine(
                             $"{reader["appointment_id"]} | {reader["patient_name"]} | {reader["doctor_name"]} | " +
-                            $"{Convert.ToDateTime(reader["appointment_date"]).ToString("yyyy-MM-dd")} | {reader["appointment_time"]} | {reader["status"]}"
+                            $"{reader["appointment_time"]} | {reader["status"]}"
                         );
                     }
                 }

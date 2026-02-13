@@ -7,6 +7,6 @@ public interface IDoctorService
     void DeleteDoctor(int id);
     void GetAllDoctors();
     void UpdateDoctorSpecialty(int id, int specialistId);
-    void GetDoctorsBySpecialty(string specialtyName);
+    void GetDoctorsBySpecialty(int specialtyId);
     void DeactivateDoctor(int id);
 }

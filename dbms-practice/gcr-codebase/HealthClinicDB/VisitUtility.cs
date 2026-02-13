@@ -11,7 +11,7 @@ public class VisitUtility : IVisitService
         {
             using (SqlConnection con = DBConnection.GetConnection())
             {
-                SqlCommand cmd = new SqlCommand("sp_record_patient_visit", con);
+                SqlCommand cmd = new SqlCommand("sp_record_visit", con);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@appointment_id", appointmentId);
@@ -31,6 +31,7 @@ public class VisitUtility : IVisitService
             throw new ClinicException("Unexpected error while recording patient visit: " + ex.Message);
         }
     }
+
 
     // UC-4.2 View Patient Medical History
     public void ViewPatientMedicalHistory(int patientId)

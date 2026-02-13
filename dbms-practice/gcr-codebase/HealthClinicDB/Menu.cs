@@ -183,8 +183,8 @@ public class Menu
                     break;
 
                 case 6:
-                    Console.Write("Specialty Name: "); string specialtyName = Console.ReadLine();
-                    doctorUtility.GetDoctorsBySpecialty(specialtyName);
+                    Console.Write("Specialty ID: "); int specialtyId = Convert.ToInt32(Console.ReadLine());
+                    doctorUtility.GetDoctorsBySpecialty(specialtyId);
                     break;
 
                 case 7:
