@@ -25,3 +25,4 @@
     * Normalized database structure up to required normal form
     * Designed ER diagram for structured representation of database system
     * Strengthened understanding of relational database design and SQL operations
+
