@@ -393,3 +393,29 @@
     * Gained practical experience with annotations and reflection in enterprise C# applications
 
 <!-- ------------------------------------------------------------ -->
+## Day — February 14, 2026
+## Topic: Email Validator — College Admission Portal
+
+## Scenarios Implemented
+    * Developed an email validation system for a college admission portal
+    * Accepted user email input and verified correctness using Regex
+    * Implemented strict validation for null, empty, and invalid email formats
+    * Applied multithreading to validate multiple email entries efficiently
+    * Integrated file handling to store validated emails
+    * Generated and maintained a JSON file for persistent storage
+
+## Key Concepts Applied
+    * Regex pattern creation and pattern matching
+    * Input validation using conditional logic
+    * Multithreading for parallel validation processing
+    * File I/O operations (read/write)
+    * Exception handling for file errors and invalid inputs
+    * Defensive programming for reliability
+
+## Tasks Completed
+    * Built a complete email validation module
+    * Ensured only valid emails are accepted and stored
+    * Rejected invalid inputs with clear error messages
+    * Stored validated data in a structured JSON file
+    * Maintained thread-safe operations during file writing
+    * Strengthened understanding of real-world validation and admission-portal workflows
