@@ -1,120 +1,130 @@
 using System;
 
-class Program
+public class Program
 {
-    static void Main(string[] args)
+    public static void Main()
     {
+        Console.WriteLine("===== TECHVILLE SMART CITY SYSTEM =====");
 
         // ================= UC-1 =================
-        // Citizen Registration
-        // Basic input, validation, eligibility score
+        // Citizen basic registration
         // ========================================
 
-        Citizen citizen = new Citizen();
-
-        Console.WriteLine("=== TechVille Citizen Registration Portal ===");
+        Console.Write("Enter Citizen ID: ");
+        int citizenId = Convert.ToInt32(Console.ReadLine());
 
         Console.Write("Enter Name: ");
-        citizen.Name = Console.ReadLine();
+        string name = Console.ReadLine();
 
         Console.Write("Enter Age: ");
-        citizen.Age = Convert.ToInt32(Console.ReadLine());
+        int age = Convert.ToInt32(Console.ReadLine());
 
-        Console.Write("Enter Annual Income: ");
-        citizen.Income = Convert.ToDouble(Console.ReadLine());
+        Console.Write("Enter Income: ");
+        double income = Convert.ToDouble(Console.ReadLine());
 
         Console.Write("Enter Residency Years: ");
-        citizen.ResidencyYears = Convert.ToInt32(Console.ReadLine());
+        int residencyYears = Convert.ToInt32(Console.ReadLine());
 
-        // Basic validation using comparison operators
-        if (citizen.Age <= 0 || citizen.Income < 0 || citizen.ResidencyYears < 0)
-        {
-            Console.WriteLine("\nInvalid data entered.");
-            return;
-        }
+        Citizen citizen = new Citizen(citizenId, name, age, income, residencyYears);
 
-        // Eligibility score calculation using arithmetic operators
-        double eligibilityScore = (citizen.Age * 0.5) +
-                                  (citizen.ResidencyYears * 2) +
-                                  (citizen.Income / 10000);
+        double eligibilityScore = (age * 0.3) + (income * 0.2) + (residencyYears * 0.5);
 
-        Console.WriteLine("\n=== Citizen Information ===");
-        Console.WriteLine("Name: " + citizen.Name);
-        Console.WriteLine("Eligibility Score: " + eligibilityScore);
-
-
+        Console.WriteLine("\nCitizen Registered Successfully!");
+        Console.WriteLine($"Eligibility Score: {eligibilityScore}");
 
         // ================= UC-2 =================
-        // Service Eligibility Checker
-        // Loops, nested if-else, switch, ternary, break, continue
-        // Multiple family members using array
+        // Service eligibility + family members
         // ========================================
 
+        EligibilityPackage package = new EligibilityPackage();
+        string servicePackage = package.DeterminePackage(age, income, residencyYears);
+
+        Console.WriteLine($"Service Package: {servicePackage}");
+
+        // Multiple family members registration
         Console.Write("\nEnter number of family members: ");
-        int count = Convert.ToInt32(Console.ReadLine());
+        int familyCount = Convert.ToInt32(Console.ReadLine());
 
-        FamilyMember[] members = new FamilyMember[count];
-        EligibilityPackage checker = new EligibilityPackage();
+        FamilyMember[] members = new FamilyMember[familyCount];
 
-        // for loop
-        for (int i = 0; i < count; i++)
+        for (int i = 0; i < familyCount; i++)
         {
-            members[i] = new FamilyMember();
-
-            Console.WriteLine($"\nEnter details for member {i + 1}");
+            Console.WriteLine($"\nEnter details for Family Member {i + 1}");
 
             Console.Write("Name: ");
-            members[i].Name = Console.ReadLine();
+            string fname = Console.ReadLine();
 
-            // while loop + break/continue validation
-            while (true)
+            Console.Write("Age: ");
+            int fage = Convert.ToInt32(Console.ReadLine());
+
+            if (fage <= 0)
             {
-                Console.Write("Age: ");
-                if (!int.TryParse(Console.ReadLine(), out int age))
-                {
-                    Console.WriteLine("Invalid age. Try again.");
-                    continue;
-                }
-
-                if (age <= 0)
-                {
-                    Console.WriteLine("Age must be positive.");
-                    continue;
-                }
-
-                members[i].Age = age;
-                break;
+                Console.WriteLine("Invalid age! Skipping...");
+                continue;
             }
 
-            Console.Write("Income: ");
-            members[i].Income = Convert.ToDouble(Console.ReadLine());
-
-            Console.Write("Residency Years: ");
-            members[i].ResidencyYears = Convert.ToInt32(Console.ReadLine());
-
-            // Nested if-else used inside method
-            members[i].Package = checker.DeterminePackage(members[i]);
-
-            // ternary operator
-            string status = members[i].Income > 300000
-                ? "Eligible Citizen"
-                : "Needs Financial Support";
-
-            Console.WriteLine("Status: " + status);
-            Console.WriteLine("Assigned Package: " + members[i].Package);
-
-            // switch
-            checker.ShowBenefits(members[i].Package);
+            members[i] = new FamilyMember(fname, fage);
         }
 
-        // foreach loop
-        Console.WriteLine("\n=== Family Members Summary ===");
+        // Ternary operator
+        string status = age > 60 ? "Senior Citizen Benefits" : "Standard Benefits";
+        Console.WriteLine($"Benefit Status: {status}");
 
-        foreach (var m in members)
+        // ================= UC-3 =================
+        // Smart Citizen Database using Arrays
+        // ========================================
+
+        Console.Write("\nEnter number of citizens to store in database: ");
+        int size = Convert.ToInt32(Console.ReadLine());
+
+        CitizenDatabase db = new CitizenDatabase(size);
+
+        for (int i = 0; i < size; i++)
         {
-            Console.WriteLine($"{m.Name} | Age: {m.Age} | Package: {m.Package}");
+            Console.Write($"Enter Citizen ID {i + 1}: ");
+            int id = Convert.ToInt32(Console.ReadLine());
+            db.AddCitizenId(id);
         }
 
-        Console.ReadKey();
+        db.DisplayCitizenIds();
+
+        // Zone sector updates
+        Console.Write("\nHow many zone updates? ");
+        int updates = Convert.ToInt32(Console.ReadLine());
+
+        for (int i = 0; i < updates; i++)
+        {
+            Console.Write("Enter Zone (0-4): ");
+            int zone = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Enter Sector (0-3): ");
+            int sector = Convert.ToInt32(Console.ReadLine());
+
+            db.UpdateZoneSector(zone, sector);
+        }
+
+        db.DisplayZoneSectorData();
+
+        // Array operations
+        ArrayOperations ops = new ArrayOperations();
+        int[] ids = db.GetCitizenIds();
+
+        ops.SortIds(ids);
+
+        Console.WriteLine("\nSorted Citizen IDs:");
+        foreach (int id in ids)
+            Console.Write(id + " ");
+
+        Console.Write("\nEnter ID to search: ");
+        int searchId = Convert.ToInt32(Console.ReadLine());
+
+        bool found = ops.SearchId(ids, searchId);
+        Console.WriteLine(found ? "Citizen Found" : "Citizen Not Found");
+
+        int[] copied = ops.CopyArray(ids);
+
+        Console.WriteLine("\nCopied Array:");
+        foreach (int id in copied)
+            Console.Write(id + " ");
     }
 }
