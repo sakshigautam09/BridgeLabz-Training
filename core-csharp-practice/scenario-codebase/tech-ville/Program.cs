@@ -126,5 +126,60 @@ public class Program
         Console.WriteLine("\nCopied Array:");
         foreach (int id in copied)
             Console.Write(id + " ");
+
+        // ================= UC-4 =================
+        // Citizen Profile Management
+        // Strings, Methods, Pass by value/ref
+        // ========================================
+
+        Console.WriteLine("\n===== UC-4: Citizen Profile Management =====");
+
+        StringUtilities stringUtils = new StringUtilities();
+        CitizenProfileManager profileManager = new CitizenProfileManager();
+        ProfileGenerator generator = new ProfileGenerator();
+
+        // Name formatting
+        Console.Write("Enter name to format: ");
+        string rawName = Console.ReadLine();
+        string formattedName = stringUtils.FormatName(rawName);
+        Console.WriteLine("Formatted Name: " + formattedName);
+
+        // Email validation
+        Console.Write("Enter email: ");
+        string email = Console.ReadLine();
+        bool isValidEmail = stringUtils.ValidateEmail(email);
+        Console.WriteLine(isValidEmail ? "Valid Email" : "Invalid Email");
+
+        // Pass by value demo
+        Console.Write("\nEnter income for update: ");
+        double incomeValue = Convert.ToDouble(Console.ReadLine());
+        profileManager.UpdateIncome(incomeValue);
+        Console.WriteLine("Original Income (outside method): " + incomeValue);
+
+        // Pass by reference demo
+        Console.Write("\nEnter name for reference update: ");
+        string refName = Console.ReadLine();
+        profileManager.UpdateCitizenName(ref refName);
+        Console.WriteLine("Updated Name (outside method): " + refName);
+
+        // Search functionality
+        Console.Write("\nHow many names to store for search? ");
+        int n = Convert.ToInt32(Console.ReadLine());
+
+        string[] nameList = new string[n];
+
+        for (int i = 0; i < n; i++)
+        {
+            Console.Write("Enter name: ");
+            nameList[i] = Console.ReadLine();
+        }
+
+        Console.Write("Enter name to search: ");
+        string search = Console.ReadLine();
+
+        profileManager.SearchCitizenByName(nameList, search);
+
+        // Profile generation
+        generator.GenerateProfile();
     }
 }
