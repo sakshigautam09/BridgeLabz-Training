@@ -419,3 +419,61 @@
     * Stored validated data in a structured JSON file
     * Maintained thread-safe operations during file writing
     * Strengthened understanding of real-world validation and admission-portal workflows
+
+<!-- ------------------------------------------------------------------- -->
+## Day — February 17, 2026
+## TechVille Smart City Management System
+
+## Overview
+TechVille is a smart city project simulation where citizens are registered, evaluated for service eligibility, stored in a database, and managed through profile utilities. This project demonstrates progressive programming concepts through Use Cases (UCs), from basic registration to robust exception handling.
+
+## Modules / Use Cases
+    * UC-1: Citizen Registration Portal
+    * Topics: Variables, Data Types, Input/Output, Operators
+    * Description: Citizens register with personal details (ID, name, age, income, residency).
+    * Key Features:
+        * Accepts user input for citizen details
+        * Calculates eligibility score
+        * Basic validation on age
+
+    * UC-2: Service Eligibility Checker
+    * Topics: Conditionals (if-else, switch), Loops, Ternary Operators, Break/Continue
+    * Description: Determines service packages based on citizen and family member profiles.
+    * Key Features:
+        * Multi-level eligibility checks
+        * Switch statement for package benefits
+        * Loops for registering multiple family members
+        * Ternary operator for benefit status
+
+    * UC-3: Smart Citizen Database
+    * Topics: Arrays (1D & 2D), Array Operations
+    * Description: Stores citizen IDs and maintains zone-sector data.
+    * Key Features:
+        * Add and display citizen IDs
+        * Update and display zone-sector citizen counts
+        * Array operations: sorting, searching, copying
+
+    * UC-4: Citizen Profile Management
+    * Topics: Strings, Functions/Methods, Pass by Value/Reference
+    * Description: Manage citizen profiles with reusable utilities.
+    * Key Features:
+        * Name formatting and email validation
+        * Profile search by name
+        * Update citizen data via pass-by-value and pass-by-reference
+        * Generate complete profiles
+
+    * UC-5: Robust Registration System
+    * Topics: Exception Handling, Custom Exceptions
+    * Description: Handles invalid inputs and other runtime errors gracefully.
+    * Key Features:
+        * Try-catch-finally blocks for safe execution
+        * Custom exceptions: InvalidAgeException, DuplicateCitizenException
+        * Error logging to error_log.txt
+
+## Features Demonstrated
+    * Object-Oriented Programming (Classes, Methods, Encapsulation)
+    * Arrays and Array Operations
+    * Conditional Logic & Loops
+    * Exception Handling & Logging
+    * Modular Programming
+    * User Input Validation
