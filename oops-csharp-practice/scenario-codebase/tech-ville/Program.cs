@@ -68,94 +68,66 @@ public class Program
             string status = age > 60 ? "Senior Citizen Benefits" : "Standard Benefits";
             Console.WriteLine("\nBenefit Status: " + status);
 
-            // ================= UC-3 =================
-            Console.WriteLine("\nSTEP 3: SMART CITY DATABASE STORAGE\n");
-
-            Console.Write("How many citizen IDs to store? ");
-            int size = Convert.ToInt32(Console.ReadLine());
-
-            CitizenDatabase db = new CitizenDatabase(size);
-
-            for (int i = 0; i < size; i++)
-            {
-                Console.Write("Enter Citizen ID: ");
-                db.AddCitizenId(Convert.ToInt32(Console.ReadLine()));
-            }
-
-            db.DisplayCitizenIds();
-
-            // ================= UC-4 =================
-            Console.WriteLine("\nSTEP 4: CITIZEN PROFILE MANAGEMENT\n");
-
-            StringUtilities stringUtils = new StringUtilities();
-            CitizenProfileManager profileManager = new CitizenProfileManager();
-            ProfileGenerator generator = new ProfileGenerator();
-
-            Console.Write("\nEnter name to format: ");
-            string rawName = Console.ReadLine();
-            Console.WriteLine("Formatted Name: " + stringUtils.FormatName(rawName));
-
-            Console.Write("\nEnter email to validate: ");
-            string email = Console.ReadLine();
-            Console.WriteLine(stringUtils.ValidateEmail(email) ? "Valid Email" : "Invalid Email");
-
-            Console.Write("\nEnter income to update (pass-by-value demo): ");
-            double inc = Convert.ToDouble(Console.ReadLine());
-            profileManager.UpdateIncome(inc);
-
-            Console.Write("\nEnter name for reference update (pass-by-ref demo): ");
-            string refName = Console.ReadLine();
-            profileManager.UpdateCitizenName(ref refName);
-            Console.WriteLine("Updated Name: " + refName);
-
-            Console.WriteLine("\nGenerating citizen profile...");
-            generator.GenerateProfile();
-
             // ================= UC-6 =================
             Console.WriteLine("\nSTEP 6: CITY SERVICES FRAMEWORK\n");
 
-            // Healthcare Service input
-            Console.WriteLine("Enter Healthcare Service Details");
-
-            Console.Write("Enter budget cost: ");
+            Console.Write("Enter Healthcare service budget: ");
             double healthCost = Convert.ToDouble(Console.ReadLine());
 
-            Console.Write("Enter number of doctors available: ");
+            Console.Write("Enter available doctors: ");
             int doctors = Convert.ToInt32(Console.ReadLine());
 
             HealthcareService healthcare = new HealthcareService(healthCost, doctors);
 
-            // Education Service input
-            Console.WriteLine("\nEnter Education Service Details");
-
-            Console.Write("Enter budget cost: ");
+            Console.Write("\nEnter Education service budget: ");
             double eduCost = Convert.ToDouble(Console.ReadLine());
 
-            Console.Write("Enter number of schools available: ");
+            Console.Write("Enter available schools: ");
             int schools = Convert.ToInt32(Console.ReadLine());
 
             EducationService education = new EducationService(eduCost, schools);
 
-            // Display service details
-            Console.WriteLine("\n--- Service Information ---\n");
-
             healthcare.ShowHealthcareDetails();
-            Console.WriteLine();
             education.ShowEducationDetails();
-        }
-        catch (InvalidAgeException ex)
-        {
-            Console.WriteLine("Age validation error: " + ex.Message);
-            logger.LogError(ex.Message);
-        }
-        catch (FormatException ex)
-        {
-            Console.WriteLine("Invalid input format.");
-            logger.LogError(ex.Message);
+
+            // ================= UC-7 =================
+            Console.WriteLine("\nSTEP 7: ADVANCED SERVICE ARCHITECTURE");
+
+            Console.WriteLine("Total services before creation: " + Service.TotalServices);
+
+            Console.Write("\nEnter premium healthcare cost: ");
+            double phCost = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Enter doctors: ");
+            int phDoctors = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Enter premium facility: ");
+            string phFeature = Console.ReadLine();
+
+            PremiumHealthcareService premiumHealth =
+                new PremiumHealthcareService(phCost, phDoctors, phFeature);
+
+            premiumHealth.ShowPremiumHealthcare();
+
+            Console.Write("\nEnter premium education cost: ");
+            double peCost = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Enter schools: ");
+            int peSchools = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Enter smart feature: ");
+            string peFeature = Console.ReadLine();
+
+            PremiumEducationService premiumEdu =
+                new PremiumEducationService(peCost, peSchools, peFeature);
+
+            premiumEdu.ShowPremiumEducation();
+
+            Console.WriteLine("Total services created: " + Service.TotalServices);
         }
         catch (Exception ex)
         {
-            Console.WriteLine("Unexpected system error.");
+            Console.WriteLine("System error occurred.");
             logger.LogError(ex.Message);
         }
         finally

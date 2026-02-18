@@ -1,24 +1,23 @@
-// ======================================
-// UC-6: Education Service
-// Inherits from Service
-// ======================================
 using System;
 
 public class EducationService : Service
 {
     private int availableSchools;
 
-    // constructor
     public EducationService(double cost, int schools)
         : base("Education", cost)
     {
         this.availableSchools = schools;
     }
 
-    // education-specific behavior
-    public void ShowEducationDetails()
+    public override void UseService()
     {
-        DisplayService(); // from base class
+        Console.WriteLine("Education service used.");
+    }
+
+    public virtual void ShowEducationDetails()
+    {
+        DisplayService();
         Console.WriteLine("Available Schools: " + availableSchools);
     }
 }
