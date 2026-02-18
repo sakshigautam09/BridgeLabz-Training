@@ -9,7 +9,7 @@ public class AddressMenu
         this.addressBook = addressBook;
     }
 
-    public void ShowMenu()
+    public async Task ShowMenu()
     {
         while (true)
         {
@@ -30,7 +30,7 @@ public class AddressMenu
             Console.WriteLine("14. Read/Write Contacts as CSV File");
             Console.WriteLine("15. Read/Write Contacts as JSON File");
             Console.WriteLine("16. Read/Write Contacts from/to JSON Server");
-
+            Console.WriteLine("17. Save/Load Contacts from DATABASE");
             Console.WriteLine("0. Exit Address Book");
 
             Console.Write("Enter choice: ");
@@ -59,9 +59,9 @@ public class AddressMenu
                     int fileChoice = Convert.ToInt32(Console.ReadLine());
 
                     if (fileChoice == 1)
-                        addressBook.WriteContactsToFile();
+                        await addressBook.WriteContactsToFileAsync();
                     else if (fileChoice == 2)
-                        addressBook.ReadContactsFromFile();
+                        await addressBook.ReadContactsFromFileAsync();
                     else
                         Console.WriteLine("Invalid choice");
                     break;
@@ -72,9 +72,9 @@ public class AddressMenu
                     int csvChoice = Convert.ToInt32(Console.ReadLine());
 
                     if (csvChoice == 1)
-                        addressBook.WriteContactsToCsv();
+                        await addressBook.WriteContactsToCsvAsync();
                     else if (csvChoice == 2)
-                        addressBook.ReadContactsFromCsv();
+                        await addressBook.ReadContactsFromCsvAsync();
                     else
                         Console.WriteLine("Invalid choice");
                     break;
@@ -85,9 +85,9 @@ public class AddressMenu
                     int jsonChoice = Convert.ToInt32(Console.ReadLine());
 
                     if (jsonChoice == 1)
-                        addressBook.WriteContactsToJson();
+                        await addressBook.WriteContactsToJsonAsync();
                     else if (jsonChoice == 2)
-                        addressBook.ReadContactsFromJson();
+                        await addressBook.ReadContactsFromJsonAsync();
                     else
                         Console.WriteLine("Invalid choice");
                     break;
@@ -106,7 +106,22 @@ public class AddressMenu
                     else
                         Console.WriteLine("Invalid choice");
                     break;
-                
+                case 17:
+                    Console.Write("Enter Address Book Name: ");
+                    string bookName = Console.ReadLine();
+
+                    Console.WriteLine("1. Save to Database");
+                    Console.WriteLine("2. Load from Database");
+                    Console.Write("Enter choice: ");
+                    int dbChoice = Convert.ToInt32(Console.ReadLine());
+
+                    if (dbChoice == 1)
+                        await addressBook.SaveContactsToDatabaseAsync(bookName);
+                    else if (dbChoice == 2)
+                        await addressBook.LoadContactsFromDatabaseAsync(bookName);
+                    else
+                        Console.WriteLine("Invalid choice");
+                    break;
 
                 default: Console.WriteLine("Invalid choice"); break;
             }

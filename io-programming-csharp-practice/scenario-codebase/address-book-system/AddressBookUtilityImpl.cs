@@ -1,10 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text.Json;    
-using System.Text.Json.Serialization;
-using System.Net.Http;       
-using System.Net.Http.Json;     
+using System.Text.Json;
+using System.Net.Http;
+using System.Net.Http.Json;
 using System.Threading.Tasks;
 
 public class AddressBookUtilityImpl : IAddressBook
@@ -27,13 +26,12 @@ public class AddressBookUtilityImpl : IAddressBook
             Contact c = contacts[i];
             if (c.GetFirstName().Equals(firstName, StringComparison.OrdinalIgnoreCase) &&
                 c.GetLastName().Equals(lastName, StringComparison.OrdinalIgnoreCase))
-            {
                 return i;
-            }
         }
         return -1;
     }
 
+    // ------------------- CRUD -------------------
     // ------------------- CRUD -------------------
     public void AddContact()
     {
@@ -146,28 +144,25 @@ public class AddressBookUtilityImpl : IAddressBook
         }
     }
 
-    // ------------------- SORTING -------------------
+    // ------------------- SORT -------------------
     private void BubbleSort(Func<Contact, string> key)
     {
         for (int i = 0; i < contacts.Count - 1; i++)
-        {
             for (int j = 0; j < contacts.Count - i - 1; j++)
-            {
                 if (string.Compare(key(contacts[j]), key(contacts[j + 1]), StringComparison.OrdinalIgnoreCase) > 0)
                 {
                     Contact temp = contacts[j];
                     contacts[j] = contacts[j + 1];
                     contacts[j + 1] = temp;
                 }
-            }
-        }
     }
+
     public void SortContactsByName() { BubbleSort(c => c.GetFirstName()); DisplayContacts(); }
     public void SortContactsByCity() { BubbleSort(c => c.GetCity()); DisplayContacts(); }
     public void SortContactsByState() { BubbleSort(c => c.GetState()); DisplayContacts(); }
     public void SortContactsByZip() { BubbleSort(c => c.GetZip()); DisplayContacts(); }
 
-    // ------------------- ADDRESS BOOK MANAGEMENT -------------------
+     // ------------------- ADDRESS BOOK MANAGEMENT -------------------
     public static void CreateAddressBook()
     {
         try
@@ -259,223 +254,163 @@ public class AddressBookUtilityImpl : IAddressBook
         Console.WriteLine("Total persons found across all address books in " + location + ": " + totalCount);
     }
 
-    // ------------------- UC-13 FILE IO -------------------
-    public void WriteContactsToFile()
+    // ============================================================
+    // UC-17 NON-BLOCKING IO IMPLEMENTATION
+    // ============================================================
+
+    // ------------------- FILE IO ASYNC -------------------
+    public async Task WriteContactsToFileAsync()
     {
-        try
-        {
-            Console.Write("Enter file path to save contacts: ");
-            string path = Console.ReadLine();
+        Console.Write("Enter file path to save contacts: ");
+        string path = Console.ReadLine();
 
-            using (StreamWriter writer = new StreamWriter(path))
+        await Task.Run(() =>
+        {
+            using StreamWriter writer = new StreamWriter(path);
+            foreach (var c in contacts)
             {
-                foreach (var c in contacts)
-                {
-                    writer.WriteLine($"{c.GetFirstName()}|{c.GetLastName()}|{c.GetAddress()}|{c.GetCity()}|{c.GetState()}|{c.GetZip()}|{c.GetPhoneNumber()}|{c.GetEmail()}");
-                }
+                writer.WriteLine($"{c.GetFirstName()}|{c.GetLastName()}|{c.GetAddress()}|{c.GetCity()}|{c.GetState()}|{c.GetZip()}|{c.GetPhoneNumber()}|{c.GetEmail()}");
             }
+        });
 
-            Console.WriteLine("Contacts successfully written to file.");
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine("Error writing to file: " + ex.Message);
-        }
+        Console.WriteLine("Contacts written asynchronously.");
     }
 
-    public void ReadContactsFromFile()
+    public async Task ReadContactsFromFileAsync()
     {
-        try
-        {
-            Console.Write("Enter file path to read contacts: ");
-            string path = Console.ReadLine();
+        Console.Write("Enter file path: ");
+        string path = Console.ReadLine();
 
-            if (!File.Exists(path))
+        if (!File.Exists(path))
+        {
+            Console.WriteLine("File not found.");
+            return;
+        }
+
+        await Task.Run(() =>
+        {
+            contacts.Clear();
+            using StreamReader reader = new StreamReader(path);
+            string line;
+            while ((line = reader.ReadLine()) != null)
             {
-                Console.WriteLine("File does not exist.");
-                return;
+                string[] data = line.Split('|');
+                if (data.Length == 8)
+                    contacts.Add(new Contact(data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7]));
             }
+        });
 
-            using (StreamReader reader = new StreamReader(path))
-            {
-                string line;
-                contacts.Clear();
-                while ((line = reader.ReadLine()) != null)
-                {
-                    string[] data = line.Split('|');
-                    if (data.Length == 8)
-                    {
-                        contacts.Add(new Contact(data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7]));
-                    }
-                }
-            }
-
-            Console.WriteLine("Contacts successfully read from file.");
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine("Error reading from file: " + ex.Message);
-        }
-    }
-    // ------------------- UC-14: CSV FILE IO -------------------
-    public void WriteContactsToCsv()
-    {
-        try
-        {
-            Console.Write("Enter CSV file path to save contacts: ");
-            string path = Console.ReadLine();
-
-            using (StreamWriter writer = new StreamWriter(path))
-            {
-                // Write CSV header
-                writer.WriteLine("FirstName,LastName,Address,City,State,Zip,Phone,Email");
-
-                foreach (var c in contacts)
-                {
-                    writer.WriteLine($"{c.GetFirstName()},{c.GetLastName()},{c.GetAddress()},{c.GetCity()},{c.GetState()},{c.GetZip()},{c.GetPhoneNumber()},{c.GetEmail()}");
-                }
-            }
-
-            Console.WriteLine("Contacts successfully written to CSV file.");
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine("Error writing CSV: " + ex.Message);
-        }
+        Console.WriteLine("Contacts loaded asynchronously.");
     }
 
-    public void ReadContactsFromCsv()
+    // ------------------- CSV ASYNC -------------------
+    public async Task WriteContactsToCsvAsync()
     {
-        try
+        Console.Write("Enter CSV path: ");
+        string path = Console.ReadLine();
+
+        await Task.Run(() =>
         {
-            Console.Write("Enter CSV file path to read contacts: ");
-            string path = Console.ReadLine();
+            using StreamWriter writer = new StreamWriter(path);
+            writer.WriteLine("FirstName,LastName,Address,City,State,Zip,Phone,Email");
 
-            if (!File.Exists(path))
+            foreach (var c in contacts)
             {
-                Console.WriteLine("CSV file does not exist.");
-                return;
+                writer.WriteLine($"{c.GetFirstName()},{c.GetLastName()},{c.GetAddress()},{c.GetCity()},{c.GetState()},{c.GetZip()},{c.GetPhoneNumber()},{c.GetEmail()}");
             }
+        });
 
-            using (StreamReader reader = new StreamReader(path))
-            {
-                string line;
-                contacts.Clear();
-
-                // Skip CSV header
-                reader.ReadLine();
-
-                while ((line = reader.ReadLine()) != null)
-                {
-                    string[] data = line.Split(',');
-                    if (data.Length == 8)
-                    {
-                        contacts.Add(new Contact(data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7]));
-                    }
-                }
-            }
-
-            Console.WriteLine("Contacts successfully read from CSV file.");
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine("Error reading CSV: " + ex.Message);
-        }
+        Console.WriteLine("CSV written asynchronously.");
     }
-// ------------------- UC-15: JSON FILE IO -------------------
-    public void WriteContactsToJson()
-    {
-        try
-        {
-            Console.Write("Enter JSON file path to save contacts: ");
-            string path = Console.ReadLine();
 
-            // Serialize contacts list to JSON
+    public async Task ReadContactsFromCsvAsync()
+    {
+        Console.Write("Enter CSV path: ");
+        string path = Console.ReadLine();
+
+        if (!File.Exists(path))
+        {
+            Console.WriteLine("CSV not found.");
+            return;
+        }
+
+        await Task.Run(() =>
+        {
+            contacts.Clear();
+            using StreamReader reader = new StreamReader(path);
+            reader.ReadLine();
+
+            string line;
+            while ((line = reader.ReadLine()) != null)
+            {
+                string[] data = line.Split(',');
+                if (data.Length == 8)
+                    contacts.Add(new Contact(data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7]));
+            }
+        });
+
+        Console.WriteLine("CSV loaded asynchronously.");
+    }
+
+    // ------------------- JSON FILE ASYNC -------------------
+    public async Task WriteContactsToJsonAsync()
+    {
+        Console.Write("Enter JSON path: ");
+        string path = Console.ReadLine();
+
+        await Task.Run(() =>
+        {
             string json = JsonSerializer.Serialize(contacts, new JsonSerializerOptions { WriteIndented = true });
-
             File.WriteAllText(path, json);
+        });
 
-            Console.WriteLine("Contacts successfully written to JSON file.");
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine("Error writing JSON: " + ex.Message);
-        }
+        Console.WriteLine("JSON saved asynchronously.");
     }
 
-    public void ReadContactsFromJson()
+    public async Task ReadContactsFromJsonAsync()
     {
-        try
+        Console.Write("Enter JSON path: ");
+        string path = Console.ReadLine();
+
+        if (!File.Exists(path))
         {
-            Console.Write("Enter JSON file path to read contacts: ");
-            string path = Console.ReadLine();
+            Console.WriteLine("JSON file not found.");
+            return;
+        }
 
-            if (!File.Exists(path))
-            {
-                Console.WriteLine("JSON file does not exist.");
-                return;
-            }
-
+        await Task.Run(() =>
+        {
             string json = File.ReadAllText(path);
-
-            // Deserialize JSON to contacts list
             contacts = JsonSerializer.Deserialize<List<Contact>>(json);
+        });
 
-            Console.WriteLine("Contacts successfully read from JSON file.");
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine("Error reading JSON: " + ex.Message);
-        }
+        Console.WriteLine("JSON loaded asynchronously.");
     }
 
-// ------------------- UC-16: JSON SERVER -------------------
     public async Task WriteContactsToJsonServerAsync(string serverUrl)
     {
-        try
-        {
-            using (HttpClient client = new HttpClient())
-            {
-                // Send contacts as JSON to server
-                HttpResponseMessage response = await client.PostAsJsonAsync(serverUrl, contacts);
-
-                if (response.IsSuccessStatusCode)
-                    Console.WriteLine("Contacts successfully sent to JSON server.");
-                else
-                    Console.WriteLine("Failed to send contacts. Status: " + response.StatusCode);
-            }
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine("Error sending to server: " + ex.Message);
-        }
+        using HttpClient client = new HttpClient();
+        await client.PostAsJsonAsync(serverUrl, contacts);
+        Console.WriteLine("Sent to server asynchronously.");
     }
 
     public async Task ReadContactsFromJsonServerAsync(string serverUrl)
     {
-        try
-        {
-            using (HttpClient client = new HttpClient())
-            {
-                // Get contacts from server as JSON
-                var serverContacts = await client.GetFromJsonAsync<List<Contact>>(serverUrl);
+        using HttpClient client = new HttpClient();
+        contacts = await client.GetFromJsonAsync<List<Contact>>(serverUrl);
+        Console.WriteLine("Fetched from server asynchronously.");
+    }
+    // ------------------- UC-18 DATABASE (OCP) -------------------
 
-                if (serverContacts != null)
-                {
-                    contacts = serverContacts;
-                    Console.WriteLine("Contacts successfully fetched from JSON server.");
-                }
-                else
-                {
-                    Console.WriteLine("No contacts received from server.");
-                }
-            }
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine("Error reading from server: " + ex.Message);
-        }
+    public async Task SaveContactsToDatabaseAsync(string bookName)
+    {
+        IDataSource dbSource = new DatabaseDataSource();
+        await dbSource.SaveAsync(contacts, bookName);
     }
 
+    public async Task LoadContactsFromDatabaseAsync(string bookName)
+    {
+        IDataSource dbSource = new DatabaseDataSource();
+        contacts = await dbSource.LoadAsync(bookName);
+    }
 }
-
