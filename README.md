@@ -21,6 +21,7 @@
 * Implemented UC-1.3 Search Patient Records
 * Implemented UC-1.4 View Patient Visit History
 * Strengthened understanding of patient data management and relational queries
+
 <!-- ------------------------------------------------------ -->
 ## Day — February 8, 2026
 ## Topic: Doctor Management Module
