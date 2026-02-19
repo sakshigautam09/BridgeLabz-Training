@@ -413,4 +413,61 @@ public class AddressBookUtilityImpl : IAddressBook
         IDataSource dbSource = new DatabaseDataSource();
         contacts = await dbSource.LoadAsync(bookName);
     }
+
+
+    //for testing
+    // ========================= MANUAL METHODS FOR TESTING =========================
+    // ========================= MANUAL METHODS FOR TESTING =========================
+    public void AddContactManually(Contact c)
+    {
+        if (FindContactIndex(c.GetFirstName(), c.GetLastName()) != -1)
+            throw new AddressBookException("Duplicate contact found.");
+
+        contacts.Add(c);
+    }
+
+    public List<Contact> GetAllContacts()
+    {
+        return new List<Contact>(contacts);
+    }
+
+    public bool EditContactManually(string firstName, string newPhone = null, string newEmail = null)
+    {
+        var contact = contacts.Find(c => c.GetFirstName().Equals(firstName, StringComparison.OrdinalIgnoreCase));
+        if (contact == null)
+            throw new AddressBookException("Contact not found.");
+
+        if (newPhone != null) contact.SetPhoneNumber(newPhone);
+        if (newEmail != null) contact.SetEmail(newEmail);
+        return true;
+    }
+
+    public bool DeleteContactManually(string firstName, string lastName)
+    {
+        int index = FindContactIndex(firstName, lastName);
+        if (index == -1)
+            throw new AddressBookException("Contact not found.");
+
+        contacts.RemoveAt(index);
+        return true;
+    }
+
+    public List<Contact> ViewPersonsByCityOrStateManually(string location)
+    {
+        return contacts.FindAll(c => c.GetCity().Equals(location, StringComparison.OrdinalIgnoreCase) ||
+                                    c.GetState().Equals(location, StringComparison.OrdinalIgnoreCase));
+    }
+
+    public int CountPersonsByCityOrStateManually(string location)
+    {
+        return contacts.FindAll(c => c.GetCity().Equals(location, StringComparison.OrdinalIgnoreCase) ||
+                                    c.GetState().Equals(location, StringComparison.OrdinalIgnoreCase)).Count;
+    }
+
+    public void SortContactsByNameManually()
+    {
+        BubbleSort(c => c.GetFirstName());
+    }
+
+
 }

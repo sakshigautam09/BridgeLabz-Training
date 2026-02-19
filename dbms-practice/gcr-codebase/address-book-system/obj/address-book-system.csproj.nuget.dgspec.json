@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\asus\\OneDrive\\Desktop\\BridgeLabz-Training\\io-programming-csharp-practice\\scenario-codebase\\address-book-system\\address-book-system.csproj": {}
+    "C:\\Users\\asus\\OneDrive\\Desktop\\BridgeLabz-Training\\dbms-practice\\gcr-codebase\\address-book-system\\address-book-system.csproj": {}
   },
   "projects": {
-    "C:\\Users\\asus\\OneDrive\\Desktop\\BridgeLabz-Training\\io-programming-csharp-practice\\scenario-codebase\\address-book-system\\address-book-system.csproj": {
+    "C:\\Users\\asus\\OneDrive\\Desktop\\BridgeLabz-Training\\dbms-practice\\gcr-codebase\\address-book-system\\address-book-system.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\asus\\OneDrive\\Desktop\\BridgeLabz-Training\\io-programming-csharp-practice\\scenario-codebase\\address-book-system\\address-book-system.csproj",
+        "projectUniqueName": "C:\\Users\\asus\\OneDrive\\Desktop\\BridgeLabz-Training\\dbms-practice\\gcr-codebase\\address-book-system\\address-book-system.csproj",
         "projectName": "address-book-system",
-        "projectPath": "C:\\Users\\asus\\OneDrive\\Desktop\\BridgeLabz-Training\\io-programming-csharp-practice\\scenario-codebase\\address-book-system\\address-book-system.csproj",
+        "projectPath": "C:\\Users\\asus\\OneDrive\\Desktop\\BridgeLabz-Training\\dbms-practice\\gcr-codebase\\address-book-system\\address-book-system.csproj",
         "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\asus\\OneDrive\\Desktop\\BridgeLabz-Training\\io-programming-csharp-practice\\scenario-codebase\\address-book-system\\obj\\",
+        "outputPath": "C:\\Users\\asus\\OneDrive\\Desktop\\BridgeLabz-Training\\dbms-practice\\gcr-codebase\\address-book-system\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -51,6 +51,14 @@
         "net10.0": {
           "targetAlias": "net10.0",
           "dependencies": {
+            "MSTest.TestAdapter": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
+            "MSTest.TestFramework": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
             "Microsoft.Data.SqlClient": {
               "target": "Package",
               "version": "[6.1.4, )"
