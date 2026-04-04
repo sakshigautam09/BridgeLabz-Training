@@ -1,0 +1,25 @@
+using System;
+
+public class LongestCommonPrefix
+{
+    public string LongestCommonPrefixMethod(string[] strs)
+    {
+        if (strs.Length == 0)
+        {
+            return "";
+        }
+
+        for (int i = 0; i < strs[0].Length; i++)
+        {
+            for (int j = 1; j < strs.Length; j++)
+            {
+                if (i == strs[j].Length || strs[j][i] != strs[0][i])
+                {
+                    return strs[0].Substring(0, i);
+                }
+            }
+        }
+
+        return strs[0];
+    }
+}

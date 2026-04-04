@@ -853,6 +853,9 @@ TechVille is a smart city project simulation where citizens are registered, eval
     * Modular Programming
     * User Input Validation
 # BridgeLabz-Training
+# BridgeLabz-Training
+BridgeLabz Training Data
+
 <!-- -------------------------------------------------------- -->
 # Day — December 16, 2025 — Git & GitHub Basics
 ## Topic: Introduction to Git and GitHub
@@ -1350,6 +1353,7 @@ Longest Word in a String
   * Debug and refine existing code
   * Improve readability and structure of programs
   * Push LMS and Quiz Grader projects to GitHub
+<<<<<<< HEAD
 
 # Day — December 31, 2025 — Scenario-Based Programming in C#
 ## Topic: Utility Class – Math Operations
@@ -1748,3 +1752,5 @@ Longest Word in a String
 
  <!-- ----------------------------------------------------------- -->
  
+=======
+>>>>>>> origin/core-csharp-practice
