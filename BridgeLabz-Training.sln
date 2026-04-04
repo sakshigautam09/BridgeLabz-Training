@@ -1,0 +1,32 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "oops-csharp-practice", "oops-csharp-practice", "{FE507705-3756-6C5F-0A3D-487952528115}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scenario-codebase", "scenario-codebase", "{9E44C30C-8EC6-D80B-FE4F-894ECFD1C243}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tech-ville", "oops-csharp-practice\scenario-codebase\tech-ville\tech-ville.csproj", "{35C14F31-4AD4-BA92-1D8D-017ADAB8FF3E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{35C14F31-4AD4-BA92-1D8D-017ADAB8FF3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35C14F31-4AD4-BA92-1D8D-017ADAB8FF3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35C14F31-4AD4-BA92-1D8D-017ADAB8FF3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35C14F31-4AD4-BA92-1D8D-017ADAB8FF3E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9E44C30C-8EC6-D80B-FE4F-894ECFD1C243} = {FE507705-3756-6C5F-0A3D-487952528115}
+		{35C14F31-4AD4-BA92-1D8D-017ADAB8FF3E} = {9E44C30C-8EC6-D80B-FE4F-894ECFD1C243}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4F0F6AA8-01A9-4BE8-8FAE-C83ED1614BD4}
+	EndGlobalSection
+EndGlobal
