@@ -2,11 +2,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.2.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "oops-csharp-practice", "oops-csharp-practice", "{FE507705-3756-6C5F-0A3D-487952528115}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dbms-practice", "dbms-practice", "{D6CAAC8F-D838-82A8-2251-54A45CE92C3E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scenario-codebase", "scenario-codebase", "{9E44C30C-8EC6-D80B-FE4F-894ECFD1C243}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gcr-codebase", "gcr-codebase", "{318A680C-DBE4-9FE5-9532-11796EAC4E8C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tech-ville", "oops-csharp-practice\scenario-codebase\tech-ville\tech-ville.csproj", "{35C14F31-4AD4-BA92-1D8D-017ADAB8FF3E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthClinicDB", "dbms-practice\gcr-codebase\HealthClinicDB\HealthClinicDB.csproj", "{66D704F8-DADF-AA66-35F2-31A6BF54F4CF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,6 +14,7 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -31,11 +32,18 @@ Global
 >>>>>>> 2b908012c761b951ffa55c41cf65adf38747548d
 =======
 >>>>>>> oops-csharp-practice
+=======
+		{66D704F8-DADF-AA66-35F2-31A6BF54F4CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66D704F8-DADF-AA66-35F2-31A6BF54F4CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66D704F8-DADF-AA66-35F2-31A6BF54F4CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66D704F8-DADF-AA66-35F2-31A6BF54F4CF}.Release|Any CPU.Build.0 = Release|Any CPU
+>>>>>>> dbms-practice
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -56,5 +64,12 @@ Global
 =======
 		SolutionGuid = {4F0F6AA8-01A9-4BE8-8FAE-C83ED1614BD4}
 >>>>>>> oops-csharp-practice
+=======
+		{318A680C-DBE4-9FE5-9532-11796EAC4E8C} = {D6CAAC8F-D838-82A8-2251-54A45CE92C3E}
+		{66D704F8-DADF-AA66-35F2-31A6BF54F4CF} = {318A680C-DBE4-9FE5-9532-11796EAC4E8C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F24FDCBB-C17D-47C1-AF89-D2CAFEC596C8}
+>>>>>>> dbms-practice
 	EndGlobalSection
 EndGlobal

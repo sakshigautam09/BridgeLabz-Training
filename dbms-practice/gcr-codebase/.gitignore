@@ -1,0 +1,18 @@
+# SonarQube temporary files
+address-book-system/.sonarqube/
+
+# Build output
+address-book-system/bin/
+address-book-system/obj/
+
+# Visual Studio / VS Code files
+.vs/
+*.user
+*.suo
+*.vscode/
+
+# Dotnet specific
+*.exe
+*.dll
+*.pdb
+*.log
